@@ -1,0 +1,85 @@
+import { motion } from "framer-motion";
+import { ArrowRight, Camera, HeartHandshake, Mail, MapPin, MessageCircle, Sparkles, Timer } from "lucide-react";
+import { useRef } from "react";
+import ContactButtons from "../components/ContactButtons";
+import Stat from "../components/Stat";
+import useOnScreen from "../hooks/useOnScreen";
+import { REGION_LABEL } from "../data/content";
+
+export default function Hero({ onOpenOrder, onNavigate }) {
+  const statsRef = useRef(null);
+  const statsOn = useOnScreen(statsRef);
+
+  return (
+    <section className="section">
+      <div className="container heroGrid">
+        <div>
+          <div className="badge">
+            <MapPin size={14} /> Осередок у {REGION_LABEL}
+          </div>
+
+          <h1 className="h1">
+            Волонтерство, яке видно в роботі.
+            <span>Сітки • Кікімори • Теплі шкарпетки</span>
+          </h1>
+
+          <p className="p heroText">
+            Ми плетемо та в’яжемо, щоб підтримати наших захисників. Якщо хочеш
+            замовити, допомогти матеріалами або приєднатися до команди — напиши
+            нам у месенджер.
+          </p>
+
+          <div className="row mt16" style={{ flexWrap: "wrap" }}>
+            <button className="btn btnPrimary" onClick={() => onOpenOrder?.(null)}>
+              Зробити замовлення / зв’язатися <ArrowRight size={16} />
+            </button>
+            <button className="btn" onClick={() => onNavigate?.("gallery")}>
+              Подивитися фото <Camera size={16} />
+            </button>
+          </div>
+
+          <div className="stats mt16" ref={statsRef}>
+            <Stat label="Фокус" value={statsOn ? "Допомога фронту" : "…"} icon={HeartHandshake} />
+            <Stat label="Формат" value={statsOn ? "Ручна робота" : "…"} icon={Sparkles} />
+            <Stat label="Контакт" value={statsOn ? "Viber / Telegram / FB" : "…"} icon={MessageCircle} />
+          </div>
+        </div>
+
+        <motion.div
+          className="card"
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45 }}
+        >
+          <div className="cardHeader">
+            <div style={{ fontWeight: 900 }}>Швидкий контакт</div>
+            <div className="small mt8">Обери месенджер — і напиши нам</div>
+            <ContactButtons compact />
+          </div>
+
+          <div className="cardPadLg grid2">
+            <div className="cardInner">
+              <div className="row">
+                <Timer size={16} />
+                <div style={{ fontWeight: 800 }}>Терміни</div>
+              </div>
+              <p className="p mt8">
+                Залежить від обсягу та наявності матеріалів. Напиши — і ми скажемо чесно, коли буде готово.
+              </p>
+            </div>
+
+            <div className="cardInner">
+              <div className="row">
+                <Mail size={16} />
+                <div style={{ fontWeight: 800 }}>Матеріали</div>
+              </div>
+              <p className="p mt8">
+                Можеш допомогти матеріалами або донатом. Уточнимо список під актуальні потреби.
+              </p>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
