@@ -58,8 +58,7 @@ export default function About() {
             </div>
 
             <p className="p mt12">
-              Додай тут місто/район (якщо це безпечно), або залиш тільки область.
-              Для безпеки можна не вказувати точну адресу.
+              м. Кам'янське
             </p>
 
             <div className="cardInner mt16">
