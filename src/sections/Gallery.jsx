@@ -21,7 +21,6 @@ export default function Gallery() {
         <SectionTitle
           eyebrow="Фото"
           title="Галерея робіт і процесу"
-          desc="Заміни картинки в /public/gallery та підпиши їх — і галерея готова."
         />
 
         <GalleryGrid items={GALLERY} onOpen={openAt} />
