@@ -6,6 +6,7 @@ import Stat from "../components/Stat";
 import useOnScreen from "../hooks/useOnScreen";
 import { REGION_LABEL } from "../data/content";
 import { GALLERY } from "../data/content";
+import { DONATE } from "../data/content";
 
 export default function Hero({ onOpenOrder, onNavigate }) {
   const statsRef = useRef(null);
@@ -21,8 +22,8 @@ export default function Hero({ onOpenOrder, onNavigate }) {
           </div>
 
           <h1 className="h1">
-            Волонтерство, яке видно в роботі.
-            <span>Сітки • Кікімори • Теплі шкарпетки</span>
+            Осередок, який працює щодня.
+            <span>Сітки • Чугайстрики • Теплі шкарпетки</span>
           </h1>
 
           <p className="p heroText">
@@ -70,15 +71,26 @@ export default function Hero({ onOpenOrder, onNavigate }) {
 </div>
 
           <div className="cardPadLg grid2">
-            <div className="cardInner">
-              <div className="row">
-                <Timer size={16} />
-                <div style={{ fontWeight: 800 }}>Терміни</div>
-              </div>
-              <p className="p mt8">
-                Залежить від обсягу та наявності матеріалів. Напиши — і ми скажемо чесно, коли буде готово.
-              </p>
-            </div>
+<div className="cardInner">
+  <div className="row">
+    <HeartHandshake size={16} />
+    <div style={{ fontWeight: 800 }}>Донат</div>
+  </div>
+
+  <p className="p mt8">
+    За донати ми купуємо матеріали та
+    оплачуємо відправки. Кожна сума важлива.
+  </p>
+
+  <a
+    className="btn btnPrimary btnSmall mt12"
+    href={DONATE.href}
+    target="_blank"
+    rel="noreferrer"
+  >
+    Допомогти донатом →
+  </a>
+</div>
 
             <div className="cardInner">
               <div className="row">
