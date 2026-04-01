@@ -3,8 +3,7 @@ import Anchor from "../components/Anchor";
 import GalleryGrid from "../components/GalleryGrid";
 import Lightbox from "../components/Lightbox";
 import SectionTitle from "../components/SectionTitle";
-import { GALLERY } from "../data/content";
-import { CONTACTS } from "../data/content";
+import { GALLERY, CONTACTS } from "../data/content";
 
 export default function Gallery() {
   const [open, setOpen] = useState(false);
@@ -14,6 +13,10 @@ export default function Gallery() {
     setIdx(i);
     setOpen(true);
   };
+
+  const galleryItems = GALLERY.filter(
+    (p) => p.group === "other"
+  );
 
   return (
     <section className="section">
@@ -25,22 +28,35 @@ export default function Gallery() {
           desc="Тут — частина фото з процесу, готових робіт та відправок."
         />
 
-        <GalleryGrid items={GALLERY} onOpen={openAt} />
-        <Lightbox open={open} onClose={() => setOpen(false)} items={GALLERY} index={idx} setIndex={setIdx} />
-        <div className="mt16" style={{ display: "flex", gap: 12, flexWrap: "wrap", alignItems: "center" }}>
+        <GalleryGrid items={galleryItems} onOpen={openAt} />
+        <Lightbox
+          open={open}
+          onClose={() => setOpen(false)}
+          items={galleryItems}
+          index={idx}
+          setIndex={setIdx}
+        />
+
+        <div
+          className="mt16"
+          style={{
+            display: "flex",
+            gap: 12,
+            flexWrap: "wrap",
+            alignItems: "center",
+          }}
+        >
           <a
             className="btn btnPrimary"
             href={CONTACTS.facebook.href}
             target="_blank"
             rel="noreferrer"
           >
-          Більше звітів і фото — дивись Facebook →
+            Більше звітів і фото — дивись Facebook →
           </a>
 
-          <div className="small">
-            Якщо хочеш підтримати — донат у шапці сайту.
-          </div>
-       </div>
+          <div className="small">Якщо хочеш підтримати — донат у шапці сайту.</div>
+        </div>
       </div>
     </section>
   );

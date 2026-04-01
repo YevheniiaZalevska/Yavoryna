@@ -7,11 +7,11 @@ import { SERVICES, GALLERY } from "../data/content";
 export default function Services({ onOpenOrder }) {
   const nets = SERVICES.filter((s) => s.id === "nets");
   const chug = SERVICES.filter((s) => s.id === "chugaistryky");
-  const other = SERVICES.filter((s) => ["underwear", "mats", "socks"].includes(s.id));
+  const warmServices = SERVICES.filter((s) => ["underwear", "mats", "socks"].includes(s.id));
 
   const worksNets = GALLERY.filter((p) => p.group === "nets");
   const worksChug = GALLERY.filter((p) => p.group === "chugaistryky");
-  const worksOther = GALLERY.filter((p) => p.group === "other");
+  const worksWarm = GALLERY.filter((p) => p.group === "warm");
 
   return (
     <section className="section sectionPlain">
@@ -21,14 +21,14 @@ export default function Services({ onOpenOrder }) {
         <SectionTitle
           eyebrow="Наші вироби"
           title="Ось наші роботи"
-          desc="Під кожним напрямом — приклади робіт. Якщо хочеш допомогти — найкраще донатом або матеріалами."
+          desc="Під кожним напрямом — приклади робіт і фото-звіти."
         />
 
         {/* --- СІТКИ --- */}
         <div className="mt20">
           <Anchor id="nets" />
           <div className="h3">Маскувальні сітки</div>
-          <div className="small mt8">Фото робіт і процесу</div>
+          <div className="small mt8">Приклади робіт</div>
 
           <div className="grid3 mt16">
             {nets.map((s) => (
@@ -54,19 +54,19 @@ export default function Services({ onOpenOrder }) {
           <WorksGallery items={worksChug} />
         </div>
 
-        {/* --- ІНШЕ --- */}
+        {/* --- ІНШЕ / ПОБУТ (білизна/килимки/шкарпетки) --- */}
         <div className="mt20">
           <Anchor id="other" />
-          <div className="h3">Інше</div>
-          <div className="small mt8">Білизна, килимки, теплі речі</div>
+          <div className="h3">Інше (побут)</div>
+          <div className="small mt8">Білизна • килимки • шкарпетки</div>
 
           <div className="grid3 mt16">
-            {other.map((s) => (
+            {warmServices.map((s) => (
               <ServiceCard key={s.id} s={s} onOrder={onOpenOrder} />
             ))}
           </div>
 
-          <WorksGallery items={worksOther} />
+          <WorksGallery items={worksWarm} />
         </div>
       </div>
     </section>
