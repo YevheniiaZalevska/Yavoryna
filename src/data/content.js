@@ -143,5 +143,5 @@ export const GALLERY = [
 
 export const DONATE = {
   label: "Донат",
-  href: "https://example.com", 
+  href: "https://send.monobank.ua/jar/1iuuLBi5L", 
 };
