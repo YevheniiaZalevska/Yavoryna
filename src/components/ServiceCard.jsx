@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, BadgeCheck } from "lucide-react";
+import { DONATE } from "../data/content";
 
 export default function ServiceCard({ s, onOrder }) {
   const Icon = s.icon;
@@ -34,12 +35,14 @@ export default function ServiceCard({ s, onOrder }) {
         ))}
       </ul>
 
-      <div className="row mt16" style={{ flexWrap: "wrap" }}>
-        <button className="btn btnPrimary" onClick={() => onOrder?.(s)}>
-          Замовити <ArrowRight size={16} />
-        </button>
-        <span className="hint">Натисни — обереш месенджер</span>
-      </div>
+     <a
+  className="btn btnPrimary"
+  href={DONATE.href}
+  target="_blank"
+  rel="noreferrer"
+>
+  Донат <ArrowRight size={16} />
+</a>
     </motion.div>
   );
 }
