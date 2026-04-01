@@ -713,3 +713,78 @@ button {
         grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 }
+
+
+
+.heroMosaic {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.heroMosaicItem {
+    position: relative;
+    border: 1px solid var(--border);
+    background: var(--panel);
+    border-radius: var(--radius2);
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+}
+
+.heroMosaicItem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: .92;
+    transition: transform .25s ease, opacity .25s ease;
+}
+
+.heroMosaicItem:hover img {
+    transform: scale(1.03);
+    opacity: 1;
+}
+
+.heroMosaicFade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, .65), transparent 60%);
+}
+
+.heroMosaicTag {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, .08);
+}
+
+
+
+.section {
+    position: relative;
+    padding: 72px 0;
+}
+
+.sectionPlain {
+    background: transparent;
+}
+
+.sectionBg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.32;
+    filter: saturate(1.05) contrast(1.05);
+}
+
+.sectionOverlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .45), rgba(0, 0, 0, .78));
+}
