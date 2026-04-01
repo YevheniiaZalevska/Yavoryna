@@ -1,9 +1,9 @@
 import { useState } from "react";
 import Anchor from "../components/Anchor";
-import GalleryGrid from "../components/GalleryGrid";
 import Lightbox from "../components/Lightbox";
 import SectionTitle from "../components/SectionTitle";
 import { GALLERY, CONTACTS } from "../data/content";
+import Carousel3Up from "../components/Carousel3Up";
 
 export default function Gallery() {
   const [open, setOpen] = useState(false);
@@ -28,7 +28,7 @@ export default function Gallery() {
           desc="Тут — частина фото з процесу, готових робіт та відправок."
         />
 
-        <GalleryGrid items={galleryItems} onOpen={openAt} />
+        <Carousel3Up items={galleryItems} onOpen={openAt} intervalMs={4500} />
         <Lightbox
           open={open}
           onClose={() => setOpen(false)}
