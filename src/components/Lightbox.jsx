@@ -8,7 +8,8 @@ export default function Lightbox({ open, onClose, items, index, setIndex }) {
     const onKey = (e) => {
       if (!open) return;
       if (e.key === "ArrowRight") setIndex((i) => (i + 1) % items.length);
-      if (e.key === "ArrowLeft") setIndex((i) => (i - 1 + items.length) % items.length);
+      if (e.key === "ArrowLeft")
+        setIndex((i) => (i - 1 + items.length) % items.length);
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
@@ -16,23 +17,33 @@ export default function Lightbox({ open, onClose, items, index, setIndex }) {
 
   return (
     <Modal open={open} onClose={onClose} title={current?.alt || "Галерея"}>
-      <div className="grid2">
-        <div className="card">
-          <div style={{ aspectRatio: "16/10", background: "rgba(0,0,0,.4)" }}>
-            <img
-              src={current?.src}
-              alt={current?.alt}
-              style={{ width: "100%", height: "100%", objectFit: "contain" }}
-            />
-          </div>
+      <div className="lightboxWrap">
+        <div className="lightboxFrame">
+          <img
+            src={current?.src}
+            alt={current?.alt}
+            className="lightboxImg"
+          />
         </div>
 
-        <div className="row" style={{ justifyContent: "space-between" }}>
-          <button className="btn btnSmall" onClick={() => setIndex((i) => (i - 1 + items.length) % items.length)}>
+        <div className="lightboxControls">
+          <button
+            className="btn btnSmall"
+            onClick={() =>
+              setIndex((i) => (i - 1 + items.length) % items.length)
+            }
+          >
             ← Попереднє
           </button>
-          <div className="small">{index + 1} / {items.length}</div>
-          <button className="btn btnSmall" onClick={() => setIndex((i) => (i + 1) % items.length)}>
+
+          <div className="small">
+            {index + 1} / {items.length}
+          </div>
+
+          <button
+            className="btn btnSmall"
+            onClick={() => setIndex((i) => (i + 1) % items.length)}
+          >
             Наступне →
           </button>
         </div>
