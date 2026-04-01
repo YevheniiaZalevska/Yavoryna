@@ -10,6 +10,8 @@ import Footer from "./sections/Footer";
 import OrderModal from "./components/OrderModal";
 
 export default function App() {
+  const base = import.meta.env.BASE_URL; // ✅ ВОТ ТУТ, до return
+
   const [orderOpen, setOrderOpen] = useState(false);
   const [orderService, setOrderService] = useState(null);
 
@@ -27,6 +29,22 @@ export default function App() {
   return (
     <div className="app">
       <div className="bgFx" />
+
+      {/* ✅ Background photos */}
+      <div className="bgPhotos">
+        <div
+          className="bgPhoto"
+          style={{ backgroundImage: `url(${base}bg/01.jpg)` }}
+        />
+        <div
+          className="bgPhoto bgPhoto2"
+          style={{ backgroundImage: `url(${base}bg/02.jpg)` }}
+        />
+        <div
+          className="bgPhoto bgPhoto3"
+          style={{ backgroundImage: `url(${base}bg/03.jpg)` }}
+        />
+      </div>
 
       <Header onNavigate={scrollTo} onOpenOrder={openOrder} />
 
