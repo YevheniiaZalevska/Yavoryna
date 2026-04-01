@@ -1,37 +1,40 @@
-import { Shield } from "lucide-react";
-import ContactButtons from "./ContactButtons";
 import Modal from "./Modal";
+import ContactButtons from "./ContactButtons";
+import { DONATE } from "../data/content";
 
-export default function OrderModal({ open, onClose, service }) {
+export default function OrderModal({ open, onClose }) {
   return (
-    <Modal
-      open={open}
-      onClose={onClose}
-      title={service ? `Замовлення: ${service.title}` : "Зв’язатися з нами"}
-    >
+    <Modal open={open} onClose={onClose} title="Зв’язатися з нами">
       <div className="grid2">
+        {/* Месенджери */}
         <div className="card cardPadLg">
-          <div style={{ fontWeight: 900 }}>Крок 1: обери месенджер</div>
-          <div className="small mt8">(на телефоні Viber відкриється як додаток)</div>
+          <div style={{ fontWeight: 900, fontSize: 18 }}>Напиши нам</div>
+          <div className="small mt8">
+            Обери месенджер — відповімо та підкажемо, як найкраще допомогти.
+          </div>
           <ContactButtons />
         </div>
 
+        {/* Донат */}
         <div className="card cardPadLg">
-          <div style={{ fontWeight: 900 }}>Крок 2: що написати</div>
-          <div className="codeBox mt12">
-            {service
-              ? `Привіт! Хочу замовити: ${service.title}.\nРозмір/кількість: …\nМісто доставки: …\nТермін (якщо важливо): …\nМій контакт: …`
-              : `Привіт! Хочу зв’язатися щодо волонтерської допомоги/замовлення.\nЩо мене цікавить: …\nМісто: …\nКонтакт: …`}
+          <div style={{ fontWeight: 900, fontSize: 18 }}>Донат</div>
+          <div className="small mt8">
+            Донат — найшвидший спосіб підтримати. На ці кошти ми купуємо матеріали
+            та оплачуємо відправки. Кожна сума важлива.
           </div>
 
-          <div className="cardInner mt12">
-            <div className="row">
-              <Shield size={16} />
-              <div style={{ fontWeight: 800 }}>Безпека</div>
-            </div>
-            <div className="p mt8" style={{ marginTop: 8 }}>
-              Не публікуй деталі, які можуть зашкодити. Уточнення — тільки в приват.
-            </div>
+          <a
+            className="btn btnPrimary mt16"
+            href={DONATE.href}
+            target="_blank"
+            rel="noreferrer"
+            style={{ width: "100%", justifyContent: "center" }}
+          >
+            Допомогти донатом →
+          </a>
+
+          <div className="small mt8">
+            Якщо не можеш донатити — напиши нам, підкажемо інші варіанти допомоги.
           </div>
         </div>
       </div>

@@ -61,7 +61,6 @@ export default function App() {
       <OrderModal
         open={orderOpen}
         onClose={() => setOrderOpen(false)}
-        service={orderService}
       />
     </div>
   );
