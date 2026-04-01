@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Header from "./sections/Header";
 import Hero from "./sections/Hero";
-import About from "./sections/About";
 import Services from "./sections/Services";
 import Order from "./sections/Order";
 import Gallery from "./sections/Gallery";
@@ -50,7 +49,6 @@ export default function App() {
 
       <main>
         <Hero onOpenOrder={openOrder} onNavigate={scrollTo} />
-        <About />
         <Services onOpenOrder={openOrder} />
         <Order />
         <Gallery />

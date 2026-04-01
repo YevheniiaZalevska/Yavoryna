@@ -27,7 +27,6 @@ export const BRAND_SUBTITLE = "Волонтерська ініціатива";
 export const REGION_LABEL = "Дніпропетровська область";
 
 export const NAV = [
-  { id: "about", label: "Про нас" },
   {
     id: "products",
     label: "Наші вироби",
