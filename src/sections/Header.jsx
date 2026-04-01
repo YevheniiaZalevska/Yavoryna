@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, Shield } from "lucide-react";
 import { useState } from "react";
 import { BRAND_NAME, BRAND_SUBTITLE, NAV, REGION_LABEL } from "../data/content";
+import { DONATE } from "../data/content";
 
 export default function Header({ onNavigate, onOpenOrder }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -32,6 +33,11 @@ export default function Header({ onNavigate, onOpenOrder }) {
           </nav>
 
           <div className="headerActions">
+
+            <a className="btn btnPrimary btnSmall" href={DONATE.href} target="_blank" rel="noreferrer">
+             {DONATE.label}
+            </a>
+
             <button className="btn btnPrimary btnSmall" onClick={() => onOpenOrder?.(null)}>
               Зв’язатися <ArrowRight size={16} />
             </button>
