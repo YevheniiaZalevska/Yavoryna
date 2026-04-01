@@ -5,10 +5,12 @@ import ContactButtons from "../components/ContactButtons";
 import Stat from "../components/Stat";
 import useOnScreen from "../hooks/useOnScreen";
 import { REGION_LABEL } from "../data/content";
+import { GALLERY } from "../data/content";
 
 export default function Hero({ onOpenOrder, onNavigate }) {
   const statsRef = useRef(null);
   const statsOn = useOnScreen(statsRef);
+  const firstPhotos = GALLERY.slice(0, 6);
 
   return (
     <section className="section">
@@ -56,6 +58,16 @@ export default function Hero({ onOpenOrder, onNavigate }) {
             <div className="small mt8">Обери месенджер — і напиши нам</div>
             <ContactButtons compact />
           </div>
+
+          <div className="heroMosaic">
+  {firstPhotos.map((p) => (
+    <div key={p.src} className="heroMosaicItem">
+      <img src={p.src} alt={p.alt} loading="lazy" />
+      <div className="heroMosaicFade" />
+      <div className="heroMosaicTag">{p.tag}</div>
+    </div>
+  ))}
+</div>
 
           <div className="cardPadLg grid2">
             <div className="cardInner">
