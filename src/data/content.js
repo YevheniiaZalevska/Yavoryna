@@ -1,71 +1,100 @@
-import { HeartHandshake, MessageCircle, Shield, Sparkles } from "lucide-react";
-
-export const BRAND_NAME = "Яворина";
-export const BRAND_SUBTITLE = "Волонтерський осередок";
-export const REGION_LABEL = "Дніпропетровська область";
+import {
+  Shield,
+  Sparkles,
+  HeartHandshake,
+  Shirt,
+  Layers,
+  Leaf
+} from "lucide-react";
 
 export const CONTACTS = {
   viber: {
     label: "Viber",
-    href: "https://vb.me/letsChatOnViber", // ✅ поставь номер
+    href: "https://vb.me/letsChatOnViber", 
   },
   telegram: {
     label: "Telegram",
-    href: "https://t.me/OlZalevska", // ✅ username/ссылка
+    href: "https://t.me/OlZalevska", 
   },
   facebook: {
     label: "Facebook",
-    href: "https://www.facebook.com/share/1CKQxHpsat/", // ✅ messenger link
+    href: "https://www.facebook.com/share/1CKQxHpsat/", 
   },
 };
 
+export const BRAND_NAME = "Яворина";
+export const BRAND_SUBTITLE = "Волонтерська ініціатива";
+export const REGION_LABEL = "Дніпропетровська область";
+
 export const NAV = [
   { id: "about", label: "Про нас" },
-  { id: "services", label: "Послуги" },
-  { id: "order", label: "Як замовити" },
-  { id: "gallery", label: "Галерея" },
-  { id: "faq", label: "FAQ" },
+  {
+    id: "products",
+    label: "Наші вироби",
+    children: [
+      { id: "nets", label: "Маскувальні сітки" },
+      { id: "chugaistryky", label: "Чугайстрики" },
+      { id: "other", label: "Інше" },
+    ],
+  },
+  { id: "calendar", label: "Календар роботи" },
+  { id: "contacts", label: "Контакти" },
 ];
 
 export const SERVICES = [
   {
     id: "nets",
-    title: "Плетіння маскувальних сіток",
-    desc: "Сітки для укриття техніки, позицій та евакуаційних маршрутів. Робимо партіями та під розмір.",
-    bullets: ["Під потрібний розмір", "Можливі партії", "Фото-звіт у процесі"],
+    title: "Маскувальні сітки різних кольорів",
+    desc: "Плетемо сітки під сезон та місцевість: зелений/літо, коричневий/осінь, білий/зима. Узгоджуємо розмір і щільність.",
+    bullets: ["Кольори під сезон", "Розміри під запит", "Фото-звіт у процесі"],
     icon: Shield,
   },
   {
-    id: "kikimora",
-    title: "Кікімори (маскувальні костюми)",
-    desc: "Ручна робота, адаптація під сезон і місцевість. Узгоджуємо матеріали та відтінки.",
-    bullets: ["Ручна робота", "Під сезон/місцевість", "Уточнюємо терміни"],
-    icon: Sparkles,
+    id: "chugaistryky",
+    title: "Чугайстрики (маскування/укриття)",
+    desc: "Робимо маскувальні елементи та покриття під конкретні задачі. Підкажемо, що краще саме для вашого запиту.",
+    bullets: ["Під задачу", "Матеріали за наявністю", "Уточнюємо терміни"],
+    icon: Leaf,
+  },
+  {
+    id: "underwear",
+    title: "Білизна",
+    desc: "Збираємо/передаємо білизну та базові речі за потребами. Підкажемо актуальний список.",
+    bullets: ["Під актуальні потреби", "Пакування наборами", "Відправка"],
+    icon: Shirt,
+  },
+  {
+    id: "mats",
+    title: "Килимки (утеплення/побут)",
+    desc: "Робимо/збираємо килимки для побутових потреб. Є різні формати залежно від матеріалів.",
+    bullets: ["Різні формати", "Можна партіями", "Уточнюємо наявність"],
+    icon: Layers,
   },
   {
     id: "socks",
     title: "Теплі шкарпетки",
     desc: "В’язання для фронту та госпіталів. Можливі набори й регулярні відправки.",
-    bullets: ["Тепло і надійно", "Набори/партії", "Відправка Новою Поштою"],
+    bullets: ["Тепло і надійно", "Набори/партії", "Відправка"],
     icon: HeartHandshake,
   },
 ];
 
-export const GALLERY = [
-  { src: "/gallery/01.jpg", alt: "Готова маскувальна сітка", tag: "Результат" },
-  { src: "/gallery/02.jpg", alt: "Волонтери за роботою", tag: "Команда" },
-  { src: "/gallery/03.jpg", alt: "Робоче місце / матеріали", tag: "Команда" },
-  { src: "/gallery/04.jpg", alt: "Кікімора — деталі", tag: "Кікімори" },
-  { src: "/gallery/05.jpg", alt: "Волонтери за роботою", tag: "Команда" },
-  { src: "/gallery/06.jpg", alt: "Волонтери за роботою", tag: "Команда" },
-  { src: "/gallery/07.jpg", alt: "Готові вироби", tag: "Посилка" },
-  { src: "/gallery/08.jpg", alt: "Робоче місце / матеріали", tag: "Процес" },
-  { src: "/gallery/09.jpg", alt: "Відправка", tag: "Відправка" },
-  { src: "/gallery/10.jpg", alt: "Готові вироби", tag: "Фідбек" },
-  { src: "/gallery/11.jpg", alt: "Плетіння сітки", tag: "Сітки" },
-  { src: "/gallery/12.jpg", alt: "Плетіння сітки — процес", tag: "Процес" },
-];
+export const BASE = import.meta.env.BASE_URL;
 
+export const GALLERY = [
+  { src: `${BASE}gallery/01.jpg`, alt: "Готова маскувальна сітка", tag: "Результат", group: "nets" },
+  { src: `${BASE}gallery/02.jpg`, alt: "Волонтери за роботою", tag: "Команда", group: "other" },
+  { src: `${BASE}gallery/03.jpg`, alt: "Робоче місце / матеріали", tag: "Команда", group: "other" },
+  { src: `${BASE}gallery/04.jpg`, alt: "Кікімора — деталі", tag: "Кікімори", group: "chugaistryky" },
+  { src: `${BASE}gallery/05.jpg`, alt: "Волонтери за роботою", tag: "Команда", group: "other" },
+  { src: `${BASE}gallery/06.jpg`, alt: "Волонтери за роботою", tag: "Команда", group: "other" },
+  { src: `${BASE}gallery/07.jpg`, alt: "Готові вироби", tag: "Посилка", group: "other" },
+  { src: `${BASE}gallery/08.jpg`, alt: "Робоче місце / матеріали", tag: "Процес", group: "other" },
+  { src: `${BASE}gallery/09.jpg`, alt: "Відправка", tag: "Відправка", group: "other" },
+  { src: `${BASE}gallery/10.jpg`, alt: "Готові вироби", tag: "Фідбек", group: "other" },
+  { src: `${BASE}gallery/11.jpg`, alt: "Плетіння сітки", tag: "Сітки", group: "nets" },
+  { src: `${BASE}gallery/12.jpg`, alt: "Плетіння сітки — процес", tag: "Процес", group: "nets" },
+];
 
 export const FAQS = [
   {
@@ -85,3 +114,8 @@ export const FAQS = [
     a: "Напиши, що в тебе є, або запитай актуальний список — потреби можуть змінюватися.",
   },
 ];
+
+export const DONATE = {
+  label: "Донат",
+  href: "https://example.com", 
+};
