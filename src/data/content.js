@@ -36,6 +36,7 @@ export const NAV = [
       { id: "other", label: "Інше" },
     ],
   },
+  { id: "gallery", label: "Звіти" },
 ];
 
 export const SERVICES = [
