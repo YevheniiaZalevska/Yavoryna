@@ -2,9 +2,7 @@ import { useState } from "react";
 import Header from "./sections/Header";
 import Hero from "./sections/Hero";
 import Services from "./sections/Services";
-import Order from "./sections/Order";
 import Gallery from "./sections/Gallery";
-import FAQ from "./sections/FAQ";
 import Footer from "./sections/Footer";
 import OrderModal from "./components/OrderModal";
 
@@ -29,30 +27,14 @@ export default function App() {
     <div className="app">
       <div className="bgFx" />
 
-      {/* ✅ Background photos */}
-      <div className="bgPhotos">
-        <div
-          className="bgPhoto"
-          style={{ backgroundImage: `url(${base}bg/01.jpg)` }}
-        />
-        <div
-          className="bgPhoto bgPhoto2"
-          style={{ backgroundImage: `url(${base}bg/02.jpg)` }}
-        />
-        <div
-          className="bgPhoto bgPhoto3"
-          style={{ backgroundImage: `url(${base}bg/03.jpg)` }}
-        />
-      </div>
+    
 
       <Header onNavigate={scrollTo} onOpenOrder={openOrder} />
 
       <main>
         <Hero onOpenOrder={openOrder} onNavigate={scrollTo} />
         <Services onOpenOrder={openOrder} />
-        <Order />
         <Gallery />
-        <FAQ />
         <Footer />
       </main>
 
