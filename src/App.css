@@ -63,7 +63,10 @@ button {
     padding: 0 16px;
 }
 
-/* Header */
+
+
+/* ------------------------------ Header ------------------------------ */
+
 .header {
     position: sticky;
     top: 0;
@@ -174,7 +177,10 @@ button {
     cursor: pointer;
 }
 
-/* Buttons */
+
+
+/* ------------------------------ Buttons ------------------------------ */
+
 .btn {
     border: 1px solid var(--border);
     background: var(--panel);
@@ -230,9 +236,12 @@ button {
     color: var(--muted);
 }
 
-/* Sections */
+
+
+/* ------------------------------ Sections ------------------------------ */
+
 .section {
-    padding: 40px 0
+    padding: 40px 0 0 0
 }
 
 .sectionTitle {
@@ -259,7 +268,6 @@ button {
     font-size: 14px;
 }
 
-/* Layout helpers */
 .grid12 {
     display: grid;
     gap: 16px
@@ -275,7 +283,36 @@ button {
     gap: 12px
 }
 
-/* Cards */
+/* .section {
+    position: relative;
+    padding: 72px 0;
+} */
+
+.sectionPlain {
+    background: transparent;
+}
+
+.sectionBg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.32;
+    filter: saturate(1.05) contrast(1.05);
+}
+
+.sectionOverlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .45), rgba(0, 0, 0, .78));
+}
+
+
+
+/* ------------------------------ Cards ------------------------------ */
+
 .card {
     border: 1px solid var(--border);
     background: var(--panel);
@@ -346,7 +383,10 @@ button {
     margin-top: 20px
 }
 
-/* Hero */
+
+
+/* ------------------------------ Hero ------------------------------ */
+
 .heroGrid {
     display: grid;
     gap: 18px
@@ -369,7 +409,55 @@ button {
     max-width: 760px
 }
 
-/* Stats */
+.heroMosaic {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.heroMosaicItem {
+    position: relative;
+    border: 1px solid var(--border);
+    background: var(--panel);
+    border-radius: var(--radius2);
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+}
+
+.heroMosaicItem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: .92;
+    transition: transform .25s ease, opacity .25s ease;
+}
+
+.heroMosaicItem:hover img {
+    transform: scale(1.03);
+    opacity: 1;
+}
+
+.heroMosaicFade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, .65), transparent 60%);
+}
+
+.heroMosaicTag {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, .08);
+}
+
+
+
+/* ------------------------------ Stats ------------------------------ */
+
 .stats {
     display: grid;
     gap: 12px
@@ -391,7 +479,10 @@ button {
     font-weight: 900
 }
 
-/* Service cards */
+
+
+/* ------------------------------ Service cards ------------------------------ */
+
 .serviceBg {
     position: relative;
     overflow: hidden;
@@ -433,7 +524,10 @@ button {
     color: var(--muted2)
 }
 
-/* Gallery */
+
+
+/* ------------------------------ Gallery ------------------------------ */
+
 .galleryGrid {
     display: grid;
     gap: 12px;
@@ -494,34 +588,10 @@ button {
     background: rgba(255, 255, 255, .08);
 }
 
-/* FAQ */
-.faqGrid {
-    display: grid;
-    gap: 12px;
-    margin-top: 18px
-}
 
-.faqBtn {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-    border: 0;
-    background: transparent;
-    color: var(--text);
-    padding: 16px 16px;
-    cursor: pointer;
-}
 
-.faqA {
-    padding: 0 16px 16px;
-    color: var(--muted);
-    line-height: 1.6;
-    font-size: 14px
-}
+/* ------------------------------ Modal ------------------------------ */
 
-/* Modal */
 .modalWrap {
     position: fixed;
     inset: 0;
@@ -585,7 +655,10 @@ button {
     color: rgba(232, 232, 234, .92);
 }
 
-/* Footer */
+
+
+/* ------------------------------ Footer ------------------------------ */
+
 .footer {
     border-top: 1px solid var(--border);
     background: rgba(5, 6, 7, .60);
@@ -611,7 +684,10 @@ button {
     margin-top: 10px
 }
 
-/* Responsive */
+
+
+/* ------------------------------ Responsive ------------------------------ */
+
 @media (min-width: 768px) {
     .nav {
         display: flex
@@ -686,7 +762,10 @@ button {
     }
 }
 
-/* Gallery */
+
+
+/* ------------------------------ Gallery ------------------------------ */
+
 .galleryGrid {
     display: grid;
     gap: 12px;
@@ -709,84 +788,8 @@ button {
 
 
 
-.heroMosaic {
-    display: grid;
-    gap: 12px;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-}
+/* ------------------------------ Lightbox bigger ------------------------------ */
 
-.heroMosaicItem {
-    position: relative;
-    border: 1px solid var(--border);
-    background: var(--panel);
-    border-radius: var(--radius2);
-    overflow: hidden;
-    aspect-ratio: 4 / 3;
-}
-
-.heroMosaicItem img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: .92;
-    transition: transform .25s ease, opacity .25s ease;
-}
-
-.heroMosaicItem:hover img {
-    transform: scale(1.03);
-    opacity: 1;
-}
-
-.heroMosaicFade {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, .65), transparent 60%);
-}
-
-.heroMosaicTag {
-    position: absolute;
-    left: 10px;
-    bottom: 10px;
-    font-size: 12px;
-    padding: 6px 10px;
-    border-radius: 999px;
-    border: 1px solid var(--border);
-    background: rgba(255, 255, 255, .08);
-}
-
-
-
-.section {
-    position: relative;
-    padding: 72px 0;
-}
-
-.sectionPlain {
-    background: transparent;
-}
-
-.sectionBg {
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background-size: cover;
-    background-position: center;
-    opacity: 0.32;
-    filter: saturate(1.05) contrast(1.05);
-}
-
-.sectionOverlay {
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, .45), rgba(0, 0, 0, .78));
-}
-
-
-
-
-
-/* Lightbox bigger */
 .lightboxWrap {
     display: grid;
     gap: 12px;
@@ -819,14 +822,11 @@ button {
     gap: 12px;
 }
 
-
-/* Lightbox: nicer for portrait images */
 .lightboxWrap {
     display: grid;
     gap: 12px;
 }
 
-/* контейнер не на всю ширину модалки, а по центру */
 .lightboxFrame {
     width: min(92vw, 900px);
     height: min(84vh, 900px);
@@ -836,22 +836,18 @@ button {
     border-radius: var(--radius2);
     overflow: hidden;
 
-    /* чтобы не было огромной черной “плашки” вокруг */
     background: transparent;
 }
 
-/* фото занимает максимум высоты/ширины без обрезки */
 .lightboxImg {
     width: 100%;
     height: 100%;
     object-fit: contain;
     display: block;
 
-    /* легкий фон только под самим изображением */
     background: rgba(0, 0, 0, .35);
 }
 
-/* кнопки под фото и в той же ширине */
 .lightboxControls {
     width: min(92vw, 900px);
     margin: 0 auto;
@@ -869,7 +865,9 @@ button {
 }
 
 
-/* Carousel 3-up */
+
+/* ------------------------------ Carousel 3-up ------------------------------ */
+
 .c3 {
     position: relative;
     margin-top: 16px;
@@ -894,7 +892,6 @@ button {
     scrollbar-width: none;
 }
 
-/* внутри каждой "страницы" будет сетка 3 в ряд */
 .c3Track>.c3Item {
     scroll-snap-align: start;
 }
@@ -905,14 +902,10 @@ button {
     padding: 0;
     cursor: pointer;
 
-    /* делаем из каждого item "внутреннюю" сетку 3-колоночную,
-     но проще: мы показываем все items в одном потоке,
-     поэтому зададим им размер как 1/3 ширины страницы */
     width: calc((100% - 24px) / 3);
     margin-right: 12px;
 }
 
-/* чтобы реально было 3 в ряд — используем flex внутри страницы */
 .c3Track {
     display: flex;
     gap: 12px;
@@ -921,7 +914,6 @@ button {
     padding: 6px 44px;
 }
 
-/* ключ: заставляем скролл “страницами” */
 .c3Track {
     scroll-padding-left: 44px;
 }
@@ -1036,14 +1028,17 @@ button {
     .c3Item {
         flex-basis: calc((100% - 12px) / 2);
     }
-
-    /* планшет: 2 в ряд */
 }
 
 @media (max-width: 560px) {
     .c3Item {
         flex-basis: 100%;
     }
+}
 
-    /* телефон: 1 в ряд */
+
+
+
+.serviceBg .btnPrimary {
+    margin-top: 16px;
 }
