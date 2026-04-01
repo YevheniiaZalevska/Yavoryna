@@ -1,11 +1,20 @@
 import { HeartHandshake, MapPin, Shield } from "lucide-react";
 import Anchor from "../components/Anchor";
 import SectionTitle from "../components/SectionTitle";
+import { BASE } from "../data/content";
 
 export default function About() {
   return (
-    <section className="section">
-      <div className="container">
+    <section className="section sectionWithBg">
+      {/* фон секции */}
+      <div
+        className="sectionBg"
+        style={{ backgroundImage: `url(${BASE}section-bg/about.jpg)` }}
+      />
+      <div className="sectionOverlay" />
+
+      {/* контент секции */}
+      <div className="container sectionContent">
         <Anchor id="about" />
 
         <SectionTitle
@@ -57,9 +66,7 @@ export default function About() {
               </div>
             </div>
 
-            <p className="p mt12">
-              м. Кам'янське
-            </p>
+            <p className="p mt12">м. Кам'янське</p>
 
             <div className="cardInner mt16">
               <div className="row">
