@@ -28,7 +28,7 @@ export default function Hero({ onOpenOrder, onNavigate }) {
 
           <p className="p heroText">
             Ми плетемо та в’яжемо, щоб підтримати наших захисників. Якщо хочеш
-            замовити, допомогти матеріалами або приєднатися до команди — напиши
+            замовити, задонатити, допомогти матеріалами або приєднатися до команди — напиши
             нам у месенджер.
           </p>
 
@@ -61,36 +61,36 @@ export default function Hero({ onOpenOrder, onNavigate }) {
           </div>
 
           <div className="heroMosaic">
-  {firstPhotos.map((p) => (
-    <div key={p.src} className="heroMosaicItem">
-      <img src={p.src} alt={p.alt} loading="lazy" />
-      <div className="heroMosaicFade" />
-      <div className="heroMosaicTag">{p.tag}</div>
-    </div>
-  ))}
-</div>
+            {firstPhotos.map((p) => (
+              <div key={p.src} className="heroMosaicItem">
+                <img src={p.src} alt={p.alt} loading="lazy" />
+                  <div className="heroMosaicFade" />
+                  <div className="heroMosaicTag">{p.tag}</div>
+              </div>
+            ))}
+          </div>
 
           <div className="cardPadLg grid2">
-<div className="cardInner">
-  <div className="row">
-    <HeartHandshake size={16} />
-    <div style={{ fontWeight: 800 }}>Донат</div>
-  </div>
+            <div className="cardInner">
+              <div className="row">
+                <HeartHandshake size={16} />
+                  <div style={{ fontWeight: 800 }}>Донат</div>
+              </div>
 
-  <p className="p mt8">
-    За донати ми купуємо матеріали та
-    оплачуємо відправки. Кожна сума важлива.
-  </p>
+              <p className="p mt8">
+                За донати ми купуємо матеріали та
+                оплачуємо відправки. Кожна сума важлива.
+              </p>
 
-  <a
-    className="btn btnPrimary btnSmall mt12"
-    href={DONATE.href}
-    target="_blank"
-    rel="noreferrer"
-  >
-    Допомогти донатом →
-  </a>
-</div>
+              <a
+                className="btn btnPrimary btnSmall mt12"
+                href={DONATE.href}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Допомогти донатом →
+              </a>
+           </div>
 
             <div className="cardInner">
               <div className="row">

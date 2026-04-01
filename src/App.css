@@ -265,10 +265,6 @@ button {
     gap: 16px
 }
 
-.col7 {}
-
-.col5 {}
-
 .grid3 {
     display: grid;
     gap: 16px
@@ -696,18 +692,15 @@ button {
     gap: 12px;
     margin-top: 18px;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    /* ✅ телефоны: 2 в ряд */
 }
 
 @media (min-width: 768px) {
     .galleryGrid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
-
-    /* ✅ планшет/десктоп: 3 */
 }
 
-/* если хочешь 4 на очень больших */
+
 @media (min-width: 1200px) {
     .galleryGrid {
         grid-template-columns: repeat(4, minmax(0, 1fr));

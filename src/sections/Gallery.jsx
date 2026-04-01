@@ -19,28 +19,28 @@ export default function Gallery() {
     <section className="section">
       <div className="container">
         <Anchor id="gallery" />
-<SectionTitle
-  eyebrow="Фото"
-  title="Галерея робіт і звітів"
-  desc="Тут — частина фото з процесу, готових робіт та відправок."
-/>
+        <SectionTitle
+          eyebrow="Фото"
+          title="Галерея робіт і звітів"
+          desc="Тут — частина фото з процесу, готових робіт та відправок."
+        />
 
         <GalleryGrid items={GALLERY} onOpen={openAt} />
         <Lightbox open={open} onClose={() => setOpen(false)} items={GALLERY} index={idx} setIndex={setIdx} />
         <div className="mt16" style={{ display: "flex", gap: 12, flexWrap: "wrap", alignItems: "center" }}>
-  <a
-    className="btn btnPrimary"
-    href={CONTACTS.facebook.href}
-    target="_blank"
-    rel="noreferrer"
-  >
-    Більше звітів і фото — дивись Facebook →
-  </a>
+          <a
+            className="btn btnPrimary"
+            href={CONTACTS.facebook.href}
+            target="_blank"
+            rel="noreferrer"
+          >
+          Більше звітів і фото — дивись Facebook →
+          </a>
 
-  <div className="small">
-    Якщо хочеш підтримати — донат у шапці сайту.
-  </div>
-</div>
+          <div className="small">
+            Якщо хочеш підтримати — донат у шапці сайту.
+          </div>
+       </div>
       </div>
     </section>
   );

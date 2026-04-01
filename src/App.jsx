@@ -7,7 +7,7 @@ import Footer from "./sections/Footer";
 import OrderModal from "./components/OrderModal";
 
 export default function App() {
-  const base = import.meta.env.BASE_URL; // ✅ ВОТ ТУТ, до return
+  const base = import.meta.env.BASE_URL; 
 
   const [orderOpen, setOrderOpen] = useState(false);
   const [orderService, setOrderService] = useState(null);
@@ -26,8 +26,6 @@ export default function App() {
   return (
     <div className="app">
       <div className="bgFx" />
-
-    
 
       <Header onNavigate={scrollTo} onOpenOrder={openOrder} />
 
