@@ -82,16 +82,16 @@ export const BASE = import.meta.env.BASE_URL;
 export const GALLERY = [
   { src: `${BASE}gallery/01.jpg`, alt: "Готова маскувальна сітка", tag: "Відправка", group: "nets" },
   { src: `${BASE}gallery/02.jpg`, alt: "Волонтери за роботою", tag: "Команда", group: "other" },
-  { src: `${BASE}gallery/03.jpg`, alt: "Робоче місце / матеріали", tag: "Волонтери за роботою", group: "other" },
+  { src: `${BASE}gallery/03.jpg`, alt: "Процес", tag: "Процес", group: "other" },
   { src: `${BASE}gallery/04.jpg`, alt: "Чугайстрики", tag: "Чугайстрики", group: "chugaistryky" },
   { src: `${BASE}gallery/05.jpg`, alt: "Волонтери за роботою", tag: "Команда", group: "other" },
-  { src: `${BASE}gallery/06.jpg`, alt: "Волонтери за роботою", tag: "Робоче місце", group: "other" },
+  { src: `${BASE}gallery/06.jpg`, alt: "Звіт", tag: "Звіт", group: "other" },
   { src: `${BASE}gallery/07.jpg`, alt: "Готові вироби", tag: "Посилка", group: "other" },
   { src: `${BASE}gallery/08.jpg`, alt: "Робоче місце / матеріали", tag: "Процес", group: "other" },
   { src: `${BASE}gallery/09.jpg`, alt: "Відправка", tag: "Відправка", group: "other" },
   { src: `${BASE}gallery/10.jpg`, alt: "Готові вироби", tag: "Фідбек", group: "other" },
   { src: `${BASE}gallery/11.jpg`, alt: "Плетіння сітки", tag: "Готові вироби", group: "other" },
-  { src: `${BASE}gallery/12.jpg`, alt: "Плетіння сітки — процес", tag: "Процес", group: "other" },
+  { src: `${BASE}gallery/12.jpg`, alt: "Волонтери за роботою", tag: "Волонтери за роботою", group: "other" },
   { src: `${BASE}gallery/13.jpg`, alt: "Шапка", tag: "Шапка", group: "warm" },
   { src: `${BASE}gallery/14.jpg`, alt: "Подушки", tag: "Подушки", group: "warm" },
   { src: `${BASE}gallery/15.jpg`, alt: "Шкарпетки", tag: "Шкарпетки", group: "warm" },
@@ -137,7 +137,7 @@ export const GALLERY = [
   { src: `${BASE}gallery/60.jpg`, alt: "Відправка", tag: "Відправка", group: "other" },
   { src: `${BASE}gallery/61.jpg`, alt: "Фідбек", tag: "Фідбек", group: "other" },
   { src: `${BASE}gallery/62.jpg`, alt: "Волонтери в роботі", tag: "Волонтери в роботі", group: "other" },
-  { src: `${BASE}gallery/63.jpg`, alt: "Звіт", tag: "Звіт", group: "other" },
+  { src: `${BASE}gallery/63.jpg`, alt: "Робоче місце", tag: "Робоче місце", group: "other" },
   { src: `${BASE}gallery/64.jpg`, alt: "Відгук", tag: "Відгук", group: "other" },
 ];
 
