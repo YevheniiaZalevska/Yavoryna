@@ -662,6 +662,7 @@ button {
 .footer {
     border-top: 1px solid var(--border);
     background: rgba(5, 6, 7, .60);
+    margin-top: 20px;
 }
 
 .footerRow {
