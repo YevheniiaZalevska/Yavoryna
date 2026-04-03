@@ -1,4 +1,4 @@
-import { CONTACTS, BRAND_NAME, BRAND_SUBTITLE, REGION_LABEL } from "../data/content";
+import { CONTACTS, BASE, BRAND_NAME, BRAND_SUBTITLE, REGION_LABEL } from "../data/content";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -6,18 +6,25 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="container">
-        <div className="footerRow">
-          <div>
-            <div style={{ fontWeight: 900 }}>{BRAND_NAME} • {BRAND_SUBTITLE}</div>
-            <div className="small mt8">© {year} • {REGION_LABEL}</div>
-          </div>
+<div className="footerRow">
 
-          <div className="footerLinks">
-            <a className="btn btnSmall" href={CONTACTS.telegram.href} target="_blank" rel="noreferrer">Telegram</a>
-            <a className="btn btnSmall" href={CONTACTS.facebook.href} target="_blank" rel="noreferrer">Facebook</a>
-            <a className="btn btnSmall" href={CONTACTS.viber.href}>Viber</a>
-          </div>
-        </div>
+  <div className="footerBrand">
+    <div className="footerLogo">
+      <img className="footerLogoImg" src={`${BASE}brand/logo.png`} alt={BRAND_NAME} />
+    </div>
+
+    <div className="footerBrandText">
+      <div className="footerBrandTitle">{BRAND_NAME} • {BRAND_SUBTITLE}</div>
+      <div className="small mt8">© {year} • {REGION_LABEL}</div>
+    </div>
+  </div>
+
+  <div className="footerLinks">
+    <a className="btn btnSmall" href={CONTACTS.telegram.href} target="_blank" rel="noreferrer">Telegram</a>
+    <a className="btn btnSmall" href={CONTACTS.facebook.href} target="_blank" rel="noreferrer">Facebook</a>
+    <a className="btn btnSmall" href={CONTACTS.viber.href} target="_blank" rel="noreferrer">Viber</a>
+  </div>
+</div>
 
         <div className="footerNote">
           Порада: не публікуй чутливу інформацію. При завантаженні фото бажано прибирати геолокацію (EXIF).

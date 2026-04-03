@@ -3,6 +3,7 @@ import { ArrowRight, Shield } from "lucide-react";
 import { useState } from "react";
 import { BRAND_NAME, BRAND_SUBTITLE, NAV, REGION_LABEL } from "../data/content";
 import { DONATE } from "../data/content";
+import { BASE } from "../data/content";
 
 export default function Header({ onNavigate, onOpenOrder }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -17,7 +18,9 @@ export default function Header({ onNavigate, onOpenOrder }) {
       <div className="container">
         <div className="headerRow">
           <div className="brand">
-            <div className="logo"><Shield size={18} /></div>
+            <div className="logo">
+              <img className="logoImg" src={`${BASE}brand/logo.png`} alt="Яворина" />
+            </div>
             <div className="brandText">
               <div className="brandName">{BRAND_NAME}</div>
               <div className="brandSub">{BRAND_SUBTITLE} • {REGION_LABEL}</div>

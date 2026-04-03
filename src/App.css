@@ -669,6 +669,26 @@ button {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    align-items: flex-start;
+}
+
+@media (min-width: 900px) {
+    .footerRow {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+    }
+}
+
+.footerBrand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.footerBrandTitle {
+    font-weight: 900;
 }
 
 .footerLinks {
@@ -1034,6 +1054,44 @@ button {
     .c3Item {
         flex-basis: 100%;
     }
+}
+
+
+
+/* ------------------------------ logo ------------------------------ */
+
+.logo {
+    width: 38px;
+    height: 38px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, .06);
+    display: grid;
+    place-items: center;
+}
+
+.logoImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.footerLogo {
+    width: 56px;
+    height: 56px;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, .06);
+}
+
+.footerLogoImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 
