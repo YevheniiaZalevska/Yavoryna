@@ -140,6 +140,19 @@ export const GALLERY = [
   { src: `${BASE}gallery/other/62.jpg`, alt: "Волонтери в роботі", tag: "Волонтери в роботі", group: "other" },
   { src: `${BASE}gallery/other/63.jpg`, alt: "Робоче місце", tag: "Робоче місце", group: "other" },
   { src: `${BASE}gallery/other/64.jpg`, alt: "Відгук", tag: "Відгук", group: "other" },
+  { src: `${BASE}gallery/awards/65.jpg`, alt: "Подяка", tag: "Подяка", group: "awards" },
+  { src: `${BASE}gallery/awards/66.jpg`, alt: "Подяка", tag: "Подяка", group: "awards" },
+  { src: `${BASE}gallery/awards/67.jpg`, alt: "Подяка", tag: "Подяка", group: "awards" },
+  { src: `${BASE}gallery/awards/68.jpg`, alt: "Подяка", tag: "Подяка", group: "awards" },
+  { src: `${BASE}gallery/awards/69.jpg`, alt: "Подяка", tag: "Подяка", group: "awards" },
+  { src: `${BASE}gallery/awards/70.jpg`, alt: "Подяка", tag: "Подяка", group: "awards" },
+  { src: `${BASE}gallery/awards/71.jpg`, alt: "Подяка", tag: "Подяка", group: "awards" },
+  { src: `${BASE}gallery/awards/72.jpg`, alt: "Подяка", tag: "Подяка", group: "awards" },
+  { src: `${BASE}gallery/awards/73.jpg`, alt: "Подяка", tag: "Подяка", group: "awards" },
+  { src: `${BASE}gallery/awards/74.jpg`, alt: "Подяка", tag: "Подяка", group: "awards" },
+  { src: `${BASE}gallery/awards/75.jpg`, alt: "Подяка", tag: "Подяка", group: "awards" },
+  { src: `${BASE}gallery/awards/76.jpg`, alt: "Подяка", tag: "Подяка", group: "awards" },
+  { src: `${BASE}gallery/awards/77.jpg`, alt: "Подяка", tag: "Подяка", group: "awards" },
 ];
 
 export const DONATE = {
