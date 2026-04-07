@@ -5,6 +5,7 @@ import Services from "./sections/Services";
 import Gallery from "./sections/Gallery";
 import Footer from "./sections/Footer";
 import OrderModal from "./components/OrderModal";
+import Awards from "./sections/Awards";
 
 export default function App() {
   const base = import.meta.env.BASE_URL; 
@@ -33,6 +34,7 @@ export default function App() {
         <Hero onOpenOrder={openOrder} onNavigate={scrollTo} />
         <Services onOpenOrder={openOrder} />
         <Gallery />
+        < Awards />
         <Footer />
       </main>
 

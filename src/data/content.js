@@ -75,6 +75,8 @@ export const SERVICES = [
     bullets: ["Тепло і надійно", "Набори/партії", "Відправка"],
     icon: HeartHandshake,
   },
+
+  { id: "awards", label: "Нагороди" },
 ];
 ''
 export const BASE = import.meta.env.BASE_URL;
@@ -140,7 +142,6 @@ export const GALLERY = [
   { src: `${BASE}gallery/other/62.jpg`, alt: "Волонтери в роботі", tag: "Волонтери в роботі", group: "other" },
   { src: `${BASE}gallery/other/63.jpg`, alt: "Робоче місце", tag: "Робоче місце", group: "other" },
   { src: `${BASE}gallery/other/64.jpg`, alt: "Відгук", tag: "Відгук", group: "other" },
-  { src: `${BASE}gallery/awards/65.jpg`, alt: "Подяка", tag: "Подяка", group: "awards" },
   { src: `${BASE}gallery/awards/66.jpg`, alt: "Подяка", tag: "Подяка", group: "awards" },
   { src: `${BASE}gallery/awards/67.jpg`, alt: "Подяка", tag: "Подяка", group: "awards" },
   { src: `${BASE}gallery/awards/68.jpg`, alt: "Подяка", tag: "Подяка", group: "awards" },
