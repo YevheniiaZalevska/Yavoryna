@@ -19,7 +19,7 @@ export default function ServiceCard({ s, onOrder }) {
           <div className="iconBox"><Icon size={18} /></div>
           <div>
             <div className="serviceTitle">{s.title}</div>
-            <div className="small">Дніпропетровська область</div>
+            {/* <div className="small">Дніпропетровська область</div> */}
           </div>
         </div>
       </div>
@@ -35,14 +35,14 @@ export default function ServiceCard({ s, onOrder }) {
         ))}
       </ul>
 
-     <a
-  className="btn btnPrimary"
-  href={DONATE.href}
-  target="_blank"
-  rel="noreferrer"
->
-  Донат <ArrowRight size={16} />
-</a>
+      <a
+        className="btn btnPrimary"
+        href={DONATE.href}
+        target="_blank"
+        rel="noreferrer"
+      >
+        Донат <ArrowRight size={16} />
+      </a>
     </motion.div>
   );
 }
