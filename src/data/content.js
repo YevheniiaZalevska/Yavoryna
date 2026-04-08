@@ -160,3 +160,10 @@ export const DONATE = {
   label: "Донат",
   href: "https://send.monobank.ua/jar/1iuuLBi5L", 
 };
+
+export const CURRENT_NEEDS = [
+  { title: "Основа для сіток", note: "за можливості — рулонами" },
+  { title: "Тканина / стрічки (зелена/коричнева/біла)", note: "під сезон" },
+  { title: "Шнур / стяжки / кріплення", note: "для плетіння та монтажу" },
+  { title: "Нитки / голки / інструменти", note: "для побутових виробів" },
+];
