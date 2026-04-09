@@ -35,14 +35,11 @@ export default function ServiceCard({ s, onOrder }) {
         ))}
       </ul>
 
-      <a
-        className="btn btnPrimary"
-        href={DONATE.href}
-        target="_blank"
-        rel="noreferrer"
-      >
-        Донат <ArrowRight size={16} />
-      </a>
+      <div className="cardActions">
+        <a className="btn btnPrimary" href={DONATE.href} target="_blank" rel="noreferrer">
+          Донат →
+        </a>
+      </div>
     </motion.div>
   );
 }
