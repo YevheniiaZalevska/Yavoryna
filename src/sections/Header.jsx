@@ -68,9 +68,9 @@ export default function Header({ onNavigate, onOpenOrder }) {
                     {n.label}
                   </button>
                 ))}
-                <button className="btn btnPrimary btnFull" onClick={() => onOpenOrder?.(null)}>
+                {/* <button className="btn btnPrimary btnFull" onClick={() => onOpenOrder?.(null)}>
                   Зв’язатися <ArrowRight size={16} />
-                </button>
+                </button> */}
               </div>
             </motion.div>
           ) : null}

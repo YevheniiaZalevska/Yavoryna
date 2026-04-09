@@ -37,6 +37,7 @@ export const NAV = [
     ],
   },
   { id: "gallery", label: "Звіти" },
+  { id: "awards", label: "Наші нагороди" },
 ];
 
 export const SERVICES = [
