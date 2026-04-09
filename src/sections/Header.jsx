@@ -23,7 +23,9 @@ export default function Header({ onNavigate, onOpenOrder }) {
             </div>
             <div className="brandText">
               <div className="brandName">{BRAND_NAME}</div>
-              <div className="brandSub">{BRAND_SUBTITLE} • {REGION_LABEL}</div>
+              <div className="brandSub hideOnMobile">
+                {BRAND_SUBTITLE} • {REGION_LABEL}
+              </div>
             </div>
           </div>
 
