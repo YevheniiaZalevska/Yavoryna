@@ -199,7 +199,8 @@ button {
     gap: 8px;
     font-weight: 600;
     font-size: 14px;
-    transition: transform .08s ease, background .18s ease, border-color .18s ease;
+    transition: transform .08s ease;
+    background: .18s ease, border-color .18s ease;
 }
 
 .btn:hover {
@@ -667,72 +668,12 @@ button {
     background: rgba(255, 255, 255, .08);
 }
 
-
-
-/* ------------------------------ Modal ------------------------------ */
-
-.modalWrap {
-    position: fixed;
-    inset: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    padding: 14px;
+.c3Tag {
+    color: white;
 }
 
-.modalOverlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, .70);
-    backdrop-filter: blur(6px);
-}
 
-.modal {
-    position: relative;
-    width: 100%;
-    max-width: 980px;
-    border: 1px solid var(--border);
-    background: rgba(5, 6, 7, .92);
-    border-radius: var(--radius2);
-    box-shadow: var(--shadow);
-    overflow: hidden;
-}
 
-.modalHead {
-    padding: 12px 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid var(--border);
-}
-
-.modalTitle {
-    font-weight: 800;
-    font-size: 14px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis
-}
-
-.modalHint {
-    font-size: 12px;
-    color: var(--muted2)
-}
-
-.modalBody {
-    padding: 14px
-}
-
-.codeBox {
-    border: 1px solid var(--border);
-    background: rgba(0, 0, 0, .28);
-    padding: 14px;
-    border-radius: 18px;
-    white-space: pre-wrap;
-    font-size: 14px;
-    color: rgba(232, 232, 234, .92);
-}
 
 
 
@@ -887,81 +828,134 @@ button {
 }
 
 
+/* ------------------------------ Modal ------------------------------ */
 
-/* ------------------------------ Lightbox bigger ------------------------------ */
+.modalWrap {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 14px;
+}
+
+.modalOverlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .70);
+    backdrop-filter: blur(6px);
+}
+
+.modal {
+    position: relative;
+    width: 100%;
+    max-width: 980px;
+    border: 1px solid var(--border);
+    background: rgba(5, 6, 7, .92);
+    border-radius: var(--radius2);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+
+    max-height: 92vh;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.modalHead {
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+    flex: 0 0 auto;
+}
+
+.modalTitle {
+    font-weight: 800;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.modalHint {
+    font-size: 12px;
+    color: var(--muted2)
+}
+
+.codeBox {
+    border: 1px solid var(--border);
+    background: rgba(0, 0, 0, .28);
+    padding: 14px;
+    border-radius: 18px;
+    white-space: pre-wrap;
+    font-size: 14px;
+    color: rgba(232, 232, 234, .92);
+}
+
+.modalBody {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: hidden;
+    padding: 14px;
+    max-height: calc(92vh - 72px);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.modalPanel {
+    height: 92vh;
+    overflow: hidden;
+}
+
+
+/* ------------------------------ Lightbox ------------------------------ */
 
 .lightboxWrap {
+    height: 100%;
+}
+
+.lightboxLayout {
+    height: 100%;
+    min-height: 0;
     display: grid;
+    grid-template-rows: 1fr auto;
     gap: 12px;
 }
 
 .lightboxFrame {
-    border: 1px solid var(--border);
-    background: rgba(0, 0, 0, .45);
-    border-radius: var(--radius2);
-    overflow: hidden;
+    flex: 1 1 auto;
+    min-height: 0;
 
-    height: min(78vh, 860px);
     display: flex;
     align-items: center;
     justify-content: center;
 
-    padding: 8px;
-}
-
-.lightboxImg {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.lightboxControls {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-}
-
-.lightboxWrap {
-    display: grid;
-    gap: 12px;
-}
-
-.lightboxFrame {
-    width: min(92vw, 900px);
-    height: min(84vh, 900px);
-    margin: 0 auto;
-
-    border: 1px solid var(--border);
-    border-radius: var(--radius2);
     overflow: hidden;
-
-    background: transparent;
+    background: rgba(0, 0, 0, .35);
+    border-radius: var(--radius2);
 }
 
 .lightboxImg {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
     display: block;
-
-    background: rgba(0, 0, 0, .35);
+    width: auto;
+    height: auto;
+    max-width: min(290px, 100%);
+    max-height: min(500px, 100%);
+    object-fit: contain;
+    object-position: center;
+    border-radius: var(--radius2);
 }
 
 .lightboxControls {
-    width: min(92vw, 900px);
-    margin: 0 auto;
-
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-}
-
-@media (max-width: 640px) {
-    .lightboxFrame {
-        height: min(76vh, 720px);
-    }
 }
 
 

@@ -16,38 +16,24 @@ export default function Lightbox({ open, onClose, items, index, setIndex }) {
   }, [open, items.length, setIndex]);
 
   return (
-    <Modal open={open} onClose={onClose} title={current?.alt || "Галерея"}>
-      <div className="lightboxWrap">
-        <div className="lightboxFrame">
-          <img
-            src={current?.src}
-            alt={current?.alt}
-            className="lightboxImg"
-          />
-        </div>
+<Modal open={open} onClose={onClose} title={current?.alt || "Галерея"}>
+  <div className="lightboxLayout">
+    <div className="lightboxFrame">
+      <img src={current?.src} alt={current?.alt} className="lightboxImg" />
+    </div>
 
-        <div className="lightboxControls">
-          <button
-            className="btn btnSmall"
-            onClick={() =>
-              setIndex((i) => (i - 1 + items.length) % items.length)
-            }
-          >
-            ← Попереднє
-          </button>
+    <div className="lightboxControls">
+      <button className="btn btnSmall" onClick={() => setIndex((i) => (i - 1 + items.length) % items.length)}>
+        ← Попереднє
+      </button>
 
-          <div className="small">
-            {index + 1} / {items.length}
-          </div>
+      <div className="small">{index + 1} / {items.length}</div>
 
-          <button
-            className="btn btnSmall"
-            onClick={() => setIndex((i) => (i + 1) % items.length)}
-          >
-            Наступне →
-          </button>
-        </div>
-      </div>
-    </Modal>
+      <button className="btn btnSmall" onClick={() => setIndex((i) => (i + 1) % items.length)}>
+        Наступне →
+      </button>
+    </div>
+  </div>
+</Modal>
   );
 }
