@@ -1,16 +1,25 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Camera } from "lucide-react";
 
+function getPerPage() {
+  // @media (max-width: 900px) -> 2
+  // @media (max-width: 560px) -> 1
+  if (window.matchMedia("(max-width: 560px)").matches) return 1;
+  if (window.matchMedia("(max-width: 900px)").matches) return 2;
+  return 3;
+}
+
 export default function Carousel3Up({
   items = [],
   onOpen,
-  intervalMs = 5000, // скорость автоплея
+  intervalMs = 5000,
 }) {
   const trackRef = useRef(null);
+
+  const [perPage, setPerPage] = useState(() => getPerPage());
   const [page, setPage] = useState(0);
   const [paused, setPaused] = useState(false);
 
-  const perPage = 3;
   const pages = Math.max(1, Math.ceil(items.length / perPage));
 
   const go = (p, smooth = true) => {
@@ -27,7 +36,38 @@ export default function Carousel3Up({
   const prev = () => go(page - 1);
   const next = () => go(page + 1);
 
-  // обновляем page если пользователь скроллит руками
+  
+  useEffect(() => {
+    const mq560 = window.matchMedia("(max-width: 560px)");
+    const mq900 = window.matchMedia("(max-width: 900px)");
+
+    const onChange = () => setPerPage(getPerPage());
+
+    mq560.addEventListener?.("change", onChange);
+    mq900.addEventListener?.("change", onChange);
+
+    // initial sync
+    onChange();
+
+    return () => {
+      mq560.removeEventListener?.("change", onChange);
+      mq900.removeEventListener?.("change", onChange);
+    };
+  }, []);
+
+  
+  useEffect(() => {
+    const newPages = Math.max(1, Math.ceil(items.length / perPage));
+    setPage((p) => {
+      const clamped = Math.max(0, Math.min(newPages - 1, p));
+      
+      requestAnimationFrame(() => go(clamped, false));
+      return clamped;
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [perPage, items.length]);
+
+  
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
@@ -43,7 +83,7 @@ export default function Carousel3Up({
     };
 
     track.addEventListener("scroll", onScroll, { passive: true });
-    // выставим позицию 0 при старте
+    
     go(0, false);
 
     return () => {
@@ -53,7 +93,7 @@ export default function Carousel3Up({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pages]);
 
-  // автоплей (перелистываем страницы)
+  
   useEffect(() => {
     if (!items.length) return;
     if (pages <= 1) return;
@@ -62,7 +102,6 @@ export default function Carousel3Up({
     const t = setInterval(() => {
       setPage((p) => {
         const nextPage = (p + 1) % pages;
-        // прокручиваем к следующей странице
         const track = trackRef.current;
         if (track) {
           const w = track.getBoundingClientRect().width || 1;
@@ -75,7 +114,7 @@ export default function Carousel3Up({
     return () => clearInterval(t);
   }, [items.length, pages, paused, intervalMs]);
 
-  // пауза при взаимодействии (скролл/drag/тач)
+
   const pauseNow = () => setPaused(true);
   const resumeLater = () => setTimeout(() => setPaused(false), 900);
 
@@ -119,11 +158,7 @@ export default function Carousel3Up({
         ))}
       </div>
 
-      <button
-        className="c3Arrow right"
-        onClick={() => { pauseNow(); next(); resumeLater(); }}
-        disabled={page >= pages - 1}
-      >
+      <button className="c3Arrow right" onClick={() => { pauseNow(); next(); resumeLater(); }} disabled={page >= pages - 1}>
         <ChevronRight size={18} />
       </button>
 
