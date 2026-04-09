@@ -88,7 +88,7 @@ export default function Hero({ onOpenOrder, onNavigate }) {
                 target="_blank"
                 rel="noreferrer"
               >
-                Допомогти донатом →
+                Допомогти донатом 
               </a>
            </div>
 

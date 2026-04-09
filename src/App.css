@@ -382,7 +382,8 @@ button {
 }
 
 .mt16 {
-    margin-top: 16px
+    margin-top: 25px;
+    margin-bottom: 20px;
 }
 
 .mt20 {
@@ -399,7 +400,7 @@ button {
 }
 
 .h1 {
-    margin: 14px 0 0;
+    margin: 20px 0 0;
     font-size: clamp(28px, 4.4vw, 52px);
     font-weight: 900;
     line-height: 1.08;
@@ -407,12 +408,13 @@ button {
 
 .h1 span {
     display: block;
-    margin-top: 10px;
+    margin-top: 20px;
     color: var(--muted)
 }
 
 .heroText {
-    max-width: 760px
+    max-width: 760px;
+    margin-top: 25px;
 }
 
 .heroMosaic {
@@ -1142,7 +1144,7 @@ button {
 .bullets {
     list-style: none;
     padding: 0;
-    margin-top: 7px;
+    margin-top: 15px;
     display: grid;
     gap: 10px;
 }
