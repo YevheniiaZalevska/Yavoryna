@@ -9,8 +9,10 @@ export default function Header({ onNavigate, onOpenOrder }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const go = (id) => {
-    onNavigate?.(id);
-    setMenuOpen(false);
+    setMenuOpen(false); 
+    window.setTimeout(() => {
+      onNavigate?.(id); 
+    }, 60);
   };
 
   return (
@@ -39,11 +41,11 @@ export default function Header({ onNavigate, onOpenOrder }) {
 
           <div className="headerActions">
 
-            <a className="btn btnPrimary btnSmall" href={DONATE.href} target="_blank" rel="noreferrer">
+            <a className="btn btnPrimary btnSmall hideOnMobile" href={DONATE.href} target="_blank" rel="noreferrer">
              {DONATE.label}
             </a>
 
-            <button className="btn btnPrimary btnSmall" onClick={() => onOpenOrder?.(null)}>
+            <button className="btn btnPrimary btnSmall hideOnMobile" onClick={() => onOpenOrder?.(null)}>
               Зв’язатися <ArrowRight size={16} />
             </button>
 
@@ -68,9 +70,17 @@ export default function Header({ onNavigate, onOpenOrder }) {
                     {n.label}
                   </button>
                 ))}
-                {/* <button className="btn btnPrimary btnFull" onClick={() => onOpenOrder?.(null)}>
+                <button className="btn btnPrimary btnFull" onClick={() => onOpenOrder?.(null)}>
                   Зв’язатися <ArrowRight size={16} />
-                </button> */}
+                </button>
+                <a
+                  className="btn btnPrimary btnFull"
+                    href={DONATE.href}
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                  {DONATE.label}
+                </a>
               </div>
             </motion.div>
           ) : null}

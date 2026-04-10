@@ -31,7 +31,7 @@ export default function Modal({ open, onClose, title, children }) {
             <div className="modalHead">
               <div style={{ minWidth: 0 }}>
                 <div className="modalTitle">{title}</div>
-                <div className="modalHint">Esc — закрити</div>
+                <div className="modalHint hideOnMobile">Esc — закрити</div>
               </div>
               <button className="btn btnSmall" onClick={onClose}>Закрити</button>
             </div>
