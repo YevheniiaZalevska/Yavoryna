@@ -33,7 +33,6 @@ export default function Services({ onOpenOrder }) {
         <div className="mt20">
           <Anchor id="nets" />
           <div className="h3">Маскувальні сітки</div>
-          <div className="small mt8">Приклади робіт</div>
 
           <div className="servicesTop mt16">
             <div className={nets.length === 1 ? "grid1" : "grid3"}>
@@ -47,15 +46,17 @@ export default function Services({ onOpenOrder }) {
             </div>
           </div>
 
+          <div className="small mt8">Приклади робіт</div>
+
           {/* галерея: на всю ширину */}
           <WorksGallery items={worksNets} />
         </div>
+
 
         {/* --- ЧУГАЙСТРИКИ --- */}
         <div className="mt20">
           <Anchor id="chugaistryky" />
           <div className="h3">Чугайстрики</div>
-          <div className="small mt8">Приклади робіт</div>
 
           <div className="servicesTop mt16">
             <div className={chug.length === 1 ? "grid1" : "grid3"}>
@@ -69,8 +70,11 @@ export default function Services({ onOpenOrder }) {
             </div>
           </div>
 
+          <div className="small mt8">Приклади робіт</div>
+
           <WorksGallery items={worksChug} />
         </div>
+
 
         {/* --- ІНШЕ / ПОБУТ --- */}
         <div className="mt20">
@@ -84,8 +88,11 @@ export default function Services({ onOpenOrder }) {
             ))}
           </div>
 
+          <div className="small mt8">Приклади робіт</div>
+
           <WorksGallery items={worksWarm} />
         </div>
+
 
         {/* --- ТІЛЬКИ ДЛЯ МОБІЛЬНИХ: один блок в конце --- */}
         <div className="needsMobileOnly mt20">
