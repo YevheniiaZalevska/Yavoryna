@@ -3,7 +3,7 @@
 A modern, responsive website built for the Yavoryna volunteer initiative.
 
 ## Live Demo
-yavoryna.vercel.app 
+https://yavoryna.vercel.app/
 
 ---
 
