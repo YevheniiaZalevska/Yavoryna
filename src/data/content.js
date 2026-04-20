@@ -8,17 +8,17 @@ import {
 } from "lucide-react";
 
 export const CONTACTS = {
-  viber: {
-    label: "Viber",
-    href: "https://vb.me/letsChatOnViber", 
-  },
   telegram: {
     label: "Telegram",
     href: "https://t.me/OlZalevska", 
   },
   facebook: {
     label: "Facebook",
-    href: "https://www.facebook.com/share/1CKQxHpsat/", 
+    href: "https://www.facebook.com/share/g/1RNGE1GYj9/", 
+  },
+    insta: {
+    label: "Instagram",
+    href: "https://www.instagram.com/olenazal?igsh=ZWV5MGljdThid2d6", 
   },
 };
 
@@ -43,36 +43,36 @@ export const NAV = [
 export const SERVICES = [
   {
     id: "nets",
-    title: "Маскувальні сітки різних кольорів",
-    desc: "Плетемо сітки під сезон та місцевість: зелений/літо, коричневий/осінь, білий/зима. Узгоджуємо розмір.",
-    bullets: ["Кольори під сезон", "Розміри під запит", "Фото-звіт у процесі"],
+    title: "Маскувальні сітки різних модифікацій",
+    desc: "Плетемо сітки під сезон, місцевість та призначення (на фортифікаційні споруди або техніку). Узгоджуємо розмір.",
+    bullets: ["Кольори під сезон", "Розміри під запит", "Фотозвіт у процесі"],
     icon: Shield,
   },
   {
     id: "chugaistryky",
-    title: "Чугайстрики (маскування/укриття)",
-    desc: "Робимо маскувальні елементи та покриття під конкретні задачі.",
+    title: "Чугайстрики – індивідуальні маскувальні костюми",
+    desc: "Робимо чугайстрики та маскувальні елементи під конкретні задачі.",
     bullets: ["Під задачу", "Матеріали за наявністю", "Уточнюємо терміни"],
     icon: Leaf,
   },
   {
     id: "underwear",
     title: "Білизна",
-    desc: "Збираємо/передаємо білизну та базові речі за потребами.",
+    desc: "Збираємо/передаємо білизну та адаптовану білизну за потребами.",
     bullets: ["Під актуальні потреби", "Пакування наборами", "Відправка"],
     icon: Shirt,
   },
   {
     id: "mats",
     title: "Килимки (утеплення/побут)",
-    desc: "Робимо/збираємо килимки для побутових потреб.",
+    desc: "Робимо килимки для побутових потреб.",
     bullets: ["Різні формати", "Можна партіями", "Уточнюємо наявність"],
     icon: Layers,
   },
   {
     id: "socks",
     title: "Теплі шкарпетки",
-    desc: "В’язання для фронту та госпіталів.",
+    desc: "В’язання для фронту та шпиталів.",
     bullets: ["Тепло і надійно", "Набори/партії", "Відправка"],
     icon: HeartHandshake,
   },
@@ -149,22 +149,24 @@ export const GALLERY = [
   { src: `${BASE}gallery/awards/69.jpg`, alt: "Подяка", tag: "Подяка", group: "awards" },
   { src: `${BASE}gallery/awards/70.jpg`, alt: "Подяка", tag: "Подяка", group: "awards" },
   { src: `${BASE}gallery/awards/71.jpg`, alt: "Подяка", tag: "Подяка", group: "awards" },
-  { src: `${BASE}gallery/awards/72.jpg`, alt: "Подяка", tag: "Подяка", group: "awards" },
+  { src: `${BASE}gallery/awards/78.jpg`, alt: "Подяка", tag: "Подяка", group: "awards" },
   { src: `${BASE}gallery/awards/73.jpg`, alt: "Подяка", tag: "Подяка", group: "awards" },
   { src: `${BASE}gallery/awards/74.jpg`, alt: "Подяка", tag: "Подяка", group: "awards" },
   { src: `${BASE}gallery/awards/75.jpg`, alt: "Подяка", tag: "Подяка", group: "awards" },
   { src: `${BASE}gallery/awards/76.jpg`, alt: "Подяка", tag: "Подяка", group: "awards" },
   { src: `${BASE}gallery/awards/77.jpg`, alt: "Подяка", tag: "Подяка", group: "awards" },
+  { src: `${BASE}gallery/awards/78.jpg`, alt: "Подяка", tag: "Подяка", group: "awards" },
 ];
 
 export const DONATE = {
-  label: "Донат",
+  label: "Пожертва",
   href: "https://send.monobank.ua/jar/1iuuLBi5L", 
 };
 
 export const CURRENT_NEEDS = [
-  { title: "Основа для сіток", note: "за можливості — рулонами" },
-  { title: "Тканина / стрічки (зелена/коричнева/біла)", note: "під сезон" },
-  { title: "Шнур / стяжки / кріплення", note: "для плетіння та монтажу" },
-  { title: "Нитки / голки / інструменти", note: "для побутових виробів" },
+  { title: "Працьовиті руки" },
+  { title: "Сітка-основа для маскування "},
+  { title: "Рулонний спанбонд – легке неткане полотно (агроволокно)"},
+  { title: "Мішковина для індивідуальних маскувальних костюмів – чугайстриків" },
+  { title: "Шнури, нитки, ножиці" },
 ];
