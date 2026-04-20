@@ -1,12 +1,70 @@
-# React + Vite
+# Yavoryna Volunteer Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive website built for the Yavoryna volunteer initiative.
 
-Currently, two official plugins are available:
+## 🔗 Live Demo
+(Add your deployed link here)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## About the Project
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This project is a production-ready website developed for a volunteer organization that supports the military by creating camouflage nets, clothing, and other essential items.
+
+The main goal of the website is to:
+- showcase volunteer work
+- present real results and reports
+- simplify communication
+- encourage support and donations
+
+---
+
+## Tech Stack
+
+- React
+- Framer Motion (animations)
+- CSS (custom responsive styling)
+- Vite
+- Git & GitHub
+- Deployment & hosting (configured independently)
+
+---
+
+## Features
+
+- Fully responsive (mobile-first)
+- Interactive gallery with autoplay carousel
+- Lightbox image viewer
+- Animated statistics (count-up effect)
+- Anchor navigation with smooth scrolling
+- Content structured by categories (nets, camouflage suits, essentials)
+- Quick contact via messengers
+- Donation integration
+- Section-based backgrounds and clean UI layout
+
+---
+
+## Key Highlights
+
+- Designed and implemented full UI from scratch
+- Built reusable component-based architecture
+- Implemented custom carousel and modal system
+- Optimized layout for both desktop and mobile UX
+- Managed full deployment and hosting setup
+
+---
+
+## Author
+
+This project was fully designed, developed, and deployed independently:
+- UI/UX design
+- frontend development
+- architecture
+- deployment
+- maintenance
+
+---
+
+## Status
+
+Active project, ready for further scaling and improvements.
