@@ -22,7 +22,7 @@ export default function Hero({ onOpenOrder, onNavigate }) {
           </div>
 
           <h1 className="h1">
-            Осередок, який працює щодня.
+            Осередок, який працює щодня, вже протягом 12 років.
             <span>Маскування: сітки, чугайстрики та інше</span>
           </h1>
 
