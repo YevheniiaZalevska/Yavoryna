@@ -697,9 +697,27 @@ button {
     font-size: 12px;
     padding: 6px 10px;
     border-radius: 999px;
-    border: 1px solid var(--border);
-    background: rgba(255, 255, 255, .08);
+    /* border: 1px solid var(--border);
+    background: rgba(255, 255, 255, .08); */
 }
+
+.heroZwit {
+    padding-left: 5px;
+    color: rgba(16, 185, 129, 0.502);
+    text-decoration: underline;
+}
+
+.heroZwit:hover,
+.heroZwit:focus {
+    color: rgba(16, 185, 129, 0.795);
+}
+
+.zwit {
+    font-size: large;
+    font-weight: 600;
+    color: white;
+}
+
 
 
 
@@ -761,8 +779,8 @@ button {
     font-size: 12px;
     padding: 6px 10px;
     border-radius: 999px;
-    border: 1px solid var(--border);
-    background: rgba(255, 255, 255, .08);
+    /* border: 1px solid var(--border);
+    background: rgba(255, 255, 255, .08); */
 }
 
 .c3Tag {
