@@ -26,7 +26,7 @@ export default function Services({ onOpenOrder }) {
         <SectionTitle
           eyebrow="Наші вироби"
           title="Ось наші роботи"
-          desc="Під кожним напрямом — приклади робіт і фото-звіти."
+          desc="Тут частина світлин з процесу, готових робіт, відправок, звітів захисників"
         />
 
         {/* --- СІТКИ --- */}
@@ -35,7 +35,6 @@ export default function Services({ onOpenOrder }) {
           <div className="h3">Маскувальні сітки</div>
           <div className="small mt8">Приклади робіт</div>
 
-          {/* верх: карточки + needs справа (только десктоп) */}
           <div className="servicesTop mt16">
             <div className={nets.length === 1 ? "grid1" : "grid3"}>
               {nets.map((s) => (
@@ -77,7 +76,7 @@ export default function Services({ onOpenOrder }) {
         <div className="mt20">
           <Anchor id="other" />
           <div className="h3">Інше (побут)</div>
-          <div className="small mt8">Білизна • килимки • шкарпетки</div>
+          <div className="small mt8">Білизна • килимки • шкарпетки • шапки • бафи • подушки</div>
 
           <div className="grid3 mt16">
             {warmServices.map((s) => (

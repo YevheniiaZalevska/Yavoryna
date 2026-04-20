@@ -22,7 +22,7 @@ export default function Footer() {
   <div className="footerLinks">
     <a className="btn btnSmall" href={CONTACTS.telegram.href} target="_blank" rel="noreferrer">Telegram</a>
     <a className="btn btnSmall" href={CONTACTS.facebook.href} target="_blank" rel="noreferrer">Facebook</a>
-    <a className="btn btnSmall" href={CONTACTS.viber.href} target="_blank" rel="noreferrer">Viber</a>
+    <a className="btn btnSmall" href={CONTACTS.insta.href} target="_blank" rel="noreferrer">Instagram</a>
   </div>
 </div>
 
