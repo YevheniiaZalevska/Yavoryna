@@ -19,7 +19,7 @@ export default function OrderModal({ open, onClose }) {
         <div className="card cardPadLg">
           <div style={{ fontWeight: 900, fontSize: 18 }}>Донат</div>
           <div className="small mt8">
-            Донат — найшвидший спосіб підтримати. На ці кошти ми купуємо матеріали
+            Пожертва — найшвидший спосіб підтримати. На ці кошти ми купуємо матеріали
             та оплачуємо відправки. Кожна сума важлива.
           </div>
 
@@ -30,7 +30,7 @@ export default function OrderModal({ open, onClose }) {
             rel="noreferrer"
             style={{ width: "100%", justifyContent: "center" }}
           >
-            Допомогти донатом →
+            Пожертва →
           </a>
 
           <div className="small mt8">

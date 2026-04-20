@@ -1,9 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, Camera } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 function getPerPage() {
-  // @media (max-width: 900px) -> 2
-  // @media (max-width: 560px) -> 1
   if (window.matchMedia("(max-width: 560px)").matches) return 1;
   if (window.matchMedia("(max-width: 900px)").matches) return 2;
   return 3;
@@ -15,28 +13,61 @@ export default function Carousel3Up({
   intervalMs = 5000,
 }) {
   const trackRef = useRef(null);
+  const resumeTimerRef = useRef(null);
 
   const [perPage, setPerPage] = useState(() => getPerPage());
-  const [page, setPage] = useState(0);
+  const [index, setIndex] = useState(0); // индекс первой видимой карточки
   const [paused, setPaused] = useState(false);
 
-  const pages = Math.max(1, Math.ceil(items.length / perPage));
+  const maxIndex = Math.max(0, items.length - perPage);
+  const positions = maxIndex + 1;
 
-  const go = (p, smooth = true) => {
+  const clampIndex = (i) => Math.max(0, Math.min(maxIndex, i));
+
+  const getItemLeft = (itemIndex) => {
+    const track = trackRef.current;
+    if (!track) return 0;
+
+    const el = track.children[itemIndex];
+    return el instanceof HTMLElement ? el.offsetLeft : 0;
+  };
+
+  const scrollOnlyToIndex = (i, smooth = true) => {
     const track = trackRef.current;
     if (!track) return;
 
-    const clamped = Math.max(0, Math.min(pages - 1, p));
-    setPage(clamped);
-
-    const w = track.getBoundingClientRect().width || 1;
-    track.scrollTo({ left: w * clamped, behavior: smooth ? "smooth" : "auto" });
+    const clamped = clampIndex(i);
+    track.scrollTo({
+      left: getItemLeft(clamped),
+      behavior: smooth ? "smooth" : "auto",
+    });
   };
 
-  const prev = () => go(page - 1);
-  const next = () => go(page + 1);
+  const go = (i, smooth = true) => {
+    const clamped = clampIndex(i);
+    setIndex(clamped);
+    scrollOnlyToIndex(clamped, smooth);
+  };
 
-  
+  const prev = () => go(index - 1);
+  const next = () => go(index + 1);
+
+  const pauseNow = () => {
+    if (resumeTimerRef.current) {
+      clearTimeout(resumeTimerRef.current);
+      resumeTimerRef.current = null;
+    }
+    setPaused(true);
+  };
+
+  const resumeLater = () => {
+    if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
+    resumeTimerRef.current = setTimeout(() => {
+      setPaused(false);
+      resumeTimerRef.current = null;
+    }, 900);
+  };
+
   useEffect(() => {
     const mq560 = window.matchMedia("(max-width: 560px)");
     const mq900 = window.matchMedia("(max-width: 900px)");
@@ -45,8 +76,6 @@ export default function Carousel3Up({
 
     mq560.addEventListener?.("change", onChange);
     mq900.addEventListener?.("change", onChange);
-
-    // initial sync
     onChange();
 
     return () => {
@@ -55,68 +84,74 @@ export default function Carousel3Up({
     };
   }, []);
 
-  
   useEffect(() => {
-    const newPages = Math.max(1, Math.ceil(items.length / perPage));
-    setPage((p) => {
-      const clamped = Math.max(0, Math.min(newPages - 1, p));
-      
-      requestAnimationFrame(() => go(clamped, false));
-      return clamped;
+    const clamped = Math.max(0, Math.min(items.length - perPage, index));
+    setIndex(clamped);
+    requestAnimationFrame(() => {
+      scrollOnlyToIndex(clamped, false);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [perPage, items.length]);
 
-  
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
 
     let raf = 0;
+
     const onScroll = () => {
       cancelAnimationFrame(raf);
       raf = requestAnimationFrame(() => {
-        const w = track.getBoundingClientRect().width || 1;
-        const p = Math.round(track.scrollLeft / w);
-        setPage(Math.max(0, Math.min(pages - 1, p)));
+        const currentLeft = track.scrollLeft;
+
+        let bestIndex = 0;
+        let bestDiff = Infinity;
+
+        for (let i = 0; i <= maxIndex; i++) {
+          const diff = Math.abs(currentLeft - getItemLeft(i));
+          if (diff < bestDiff) {
+            bestDiff = diff;
+            bestIndex = i;
+          }
+        }
+
+        setIndex(bestIndex);
       });
     };
 
     track.addEventListener("scroll", onScroll, { passive: true });
-    
-    go(0, false);
+    scrollOnlyToIndex(index, false);
 
     return () => {
       cancelAnimationFrame(raf);
       track.removeEventListener("scroll", onScroll);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [pages]);
+  }, [maxIndex, perPage]);
 
-  
   useEffect(() => {
     if (!items.length) return;
-    if (pages <= 1) return;
+    if (positions <= 1) return;
     if (paused) return;
 
     const t = setInterval(() => {
-      setPage((p) => {
-        const nextPage = (p + 1) % pages;
-        const track = trackRef.current;
-        if (track) {
-          const w = track.getBoundingClientRect().width || 1;
-          track.scrollTo({ left: w * nextPage, behavior: "smooth" });
-        }
-        return nextPage;
+      setIndex((prevIndex) => {
+        const nextIndex = prevIndex >= maxIndex ? 0 : prevIndex + 1;
+        requestAnimationFrame(() => {
+          scrollOnlyToIndex(nextIndex, true);
+        });
+        return nextIndex;
       });
     }, intervalMs);
 
     return () => clearInterval(t);
-  }, [items.length, pages, paused, intervalMs]);
+  }, [items.length, positions, paused, intervalMs, maxIndex]);
 
-
-  const pauseNow = () => setPaused(true);
-  const resumeLater = () => setTimeout(() => setPaused(false), 900);
+  useEffect(() => {
+    return () => {
+      if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
+    };
+  }, []);
 
   if (!items.length) return null;
 
@@ -126,7 +161,15 @@ export default function Carousel3Up({
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <button className="c3Arrow left" onClick={() => { pauseNow(); prev(); resumeLater(); }} disabled={page <= 0}>
+      <button
+        className="c3Arrow left"
+        onClick={() => {
+          pauseNow();
+          prev();
+          resumeLater();
+        }}
+        disabled={index <= 0}
+      >
         <ChevronLeft size={18} />
       </button>
 
@@ -151,27 +194,40 @@ export default function Carousel3Up({
               <div className="c3Fade" />
               <div className="c3Meta">
                 <span className="c3Tag">{it.tag}</span>
-                <Camera size={16} />
               </div>
             </div>
           </button>
         ))}
       </div>
 
-      <button className="c3Arrow right" onClick={() => { pauseNow(); next(); resumeLater(); }} disabled={page >= pages - 1}>
+      <button
+        className="c3Arrow right"
+        onClick={() => {
+          pauseNow();
+          next();
+          resumeLater();
+        }}
+        disabled={index >= maxIndex}
+      >
         <ChevronRight size={18} />
       </button>
 
       <div className="c3Bottom">
-        <div className="small">{page + 1} / {pages}</div>
+        <div className="small">
+          {index + 1} / {positions}
+        </div>
 
         <div className="c3Dots">
-          {Array.from({ length: pages }).map((_, i) => (
+          {Array.from({ length: positions }).map((_, i) => (
             <button
               key={i}
-              className={`c3Dot ${i === page ? "isActive" : ""}`}
-              onClick={() => { pauseNow(); go(i); resumeLater(); }}
-              aria-label={`page ${i + 1}`}
+              className={`c3Dot ${i === index ? "isActive" : ""}`}
+              onClick={() => {
+                pauseNow();
+                go(i);
+                resumeLater();
+              }}
+              aria-label={`position ${i + 1}`}
             />
           ))}
         </div>

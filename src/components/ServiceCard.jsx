@@ -37,7 +37,7 @@ export default function ServiceCard({ s, onOrder }) {
 
       <div className="cardActions">
         <a className="btn btnPrimary" href={DONATE.href} target="_blank" rel="noreferrer">
-          Донат →
+          Пожертва →
         </a>
       </div>
     </motion.div>

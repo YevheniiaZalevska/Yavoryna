@@ -29,12 +29,12 @@ export default function NeedsCard({ onContact }) {
           <div style={{ fontWeight: 800 }}>Як допомогти</div>
         </div>
         <div className="small mt8">
-          Донат = матеріали + відправки. Якщо маєш матеріали — напиши нам, узгодимо.
+          Пожертва = матеріали + відправки. Якщо маєш матеріали — напиши нам, узгодимо.
         </div>
 
         <div className="row mt12" style={{ gap: 10, flexWrap: "wrap" }}>
           <a className="btn btnPrimary btnSmall" href={DONATE.href} target="_blank" rel="noreferrer">
-            Донат →
+            Пожертва →
           </a>
 
           <button className="btn btnSmall" onClick={onContact}>
