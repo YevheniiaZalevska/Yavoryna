@@ -189,7 +189,7 @@ button {
 /* -------------------- sections -------------------- */
 
 .section {
-    padding: 40px 0 0 0
+    padding: 20px 0 0 0
 }
 
 .sectionTitle {
@@ -639,16 +639,20 @@ button {
 }
 
 .h1 {
-    margin: 10px 0 0;
+    margin-top: 20px;
     font-size: clamp(28px, 4.4vw, 52px);
     font-weight: 900;
     line-height: 1.08;
 }
 
-.h1 span {
+.h2 {
     display: block;
     margin-top: 10px;
     color: var(--muted)
+}
+
+.tt {
+    font-size: clamp(28px, 4vw, 52px);
 }
 
 .heroText {
@@ -1165,6 +1169,7 @@ button {
     font-weight: 800;
     color: var(--text);
     margin-bottom: 10px;
+    text-align: center;
 }
 
 .statsNote {
@@ -1221,6 +1226,12 @@ button {
         flex-direction: row;
         align-items: center;
         justify-content: space-between
+    }
+}
+
+@media (max-width: 438px) {
+    .heroZwit {
+        padding-left: 0px;
     }
 }
 
