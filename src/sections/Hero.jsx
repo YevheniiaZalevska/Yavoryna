@@ -7,6 +7,7 @@ import useOnScreen from "../hooks/useOnScreen";
 import { REGION_LABEL } from "../data/content";
 import { GALLERY } from "../data/content";
 import { DONATE } from "../data/content";
+import VideoBlock from "../components/VideoBlock";
 
 export default function Hero({ onOpenOrder, onNavigate }) {
   const statsRef = useRef(null);
@@ -50,6 +51,11 @@ export default function Hero({ onOpenOrder, onNavigate }) {
             <Stat label="Формат" value={statsOn ? "Ручна робота" : "…"} icon={Sparkles} />
             <Stat label="Контакт" value={statsOn ? "FB / Telegram / Instagram" : "…"} icon={MessageCircle} />
           </div>
+
+          <div>
+            <VideoBlock />
+          </div>
+
         </div>
 
         <motion.div
