@@ -17,14 +17,8 @@ export default function Hero({ onOpenOrder, onNavigate }) {
     <section className="section">
       <div className="container heroGrid">
         <div>
-          <div className="badge">
-            <MapPin size={14} /> Представництво у Дніпропетровській області ГО "Всеукраїнське Об'єднання Українок "Яворина"
-          </div>
-
-          <h1 className="h1">
-            Осередок, який працює постійно протягом 12 років.
-            <span>Маскування: сітки, чугайстрики та інше</span>
-          </h1>
+ 
+          <h2 className="h2 tt">Маскування: сітки, чугайстрики та інше</h2>
 
           <p className="p heroText">
             Кожен на своєму місці може зробити багато. Ми працюємо, щоб наблизити перемогу і захистити наших захисників. Якщо хочеш допомогти – напиши нам.
