@@ -99,6 +99,10 @@ export default function Stats() {
               <div className="statsNote">{item.note}</div>
             </div>
           ))}
+
+          <p className="p">
+            * Станом на 5 травня 2026 року
+          </p>
         </div>
       </div>
     </section>
