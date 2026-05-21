@@ -648,7 +648,7 @@ button {
 .h2 {
     display: block;
     margin-top: 10px;
-    color: var(--muted)
+    color: var(--text)
 }
 
 .tt {
@@ -1243,6 +1243,43 @@ button {
     gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+
+
+/* -------------------- scroll top button -------------------- */
+
+.scrollTopBtn {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 1000;
+
+    width: 46px;
+    height: 46px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: rgba(10, 12, 14, .78);
+    color: var(--text);
+
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: .2s ease;
+}
+
+.scrollTopBtn.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.scrollTopBtn:hover {
+    background: rgba(16, 185, 129, .25);
 }
 
 
