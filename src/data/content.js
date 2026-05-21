@@ -83,7 +83,6 @@ export const SERVICES = [
 export const BASE = import.meta.env.BASE_URL;
 
 export const GALLERY = [
-  { src: `${BASE}gallery/nets/01.jpg`, alt: "Готова маскувальна сітка", tag: "Відправка", group: "nets" },
   { src: `${BASE}gallery/other/02.jpg`, alt: "Волонтери за роботою", tag: "Команда", group: "other" },
   { src: `${BASE}gallery/other/03.jpg`, alt: "Процес", tag: "Процес", group: "other" },
   { src: `${BASE}gallery/chugaistryky/04.jpg`, alt: "Чугайстрики", tag: "Чугайстрики", group: "chugaistryky" },
@@ -101,6 +100,7 @@ export const GALLERY = [
   { src: `${BASE}gallery/warm/16.jpg`, alt: "Шапка", tag: "Шапка", group: "warm" },
   { src: `${BASE}gallery/warm/17.jpg`, alt: "Килимки", tag: "Килимки", group: "warm" },
   { src: `${BASE}gallery/warm/27.jpg`, alt: "Шкарпетки", tag: "Шкарпетки", group: "warm" },
+  { src: `${BASE}gallery/nets/01.jpg`, alt: "Готова маскувальна сітка", tag: "Відправка", group: "nets" },
   { src: `${BASE}gallery/nets/19.jpg`, alt: "Сітки", tag: "Літня сітка", group: "nets" },
   { src: `${BASE}gallery/nets/20.jpg`, alt: "Сітки", tag: "Сітки", group: "nets" },
   { src: `${BASE}gallery/nets/21.jpg`, alt: "Сітки", tag: "Сітки в природі", group: "nets" },
@@ -108,8 +108,9 @@ export const GALLERY = [
   { src: `${BASE}gallery/nets/23.jpg`, alt: "Сітки", tag: "Зимова сітка", group: "nets" },
   { src: `${BASE}gallery/nets/24.jpg`, alt: "Сітки", tag: "Зимова сітка", group: "nets" },
   { src: `${BASE}gallery/nets/25.jpg`, alt: "Сітки", tag: "Готова сітка", group: "nets" },
-  { src: `${BASE}gallery/nets/25.jpg`, alt: "Сітки", tag: "Готова сітка", group: "nets" },
+  { src: `${BASE}gallery/nets/18.jpg`, alt: "Сітки", tag: "Готова сітка", group: "nets" },
   { src: `${BASE}gallery/nets/26.jpg`, alt: "Сітки", tag: "Сітка в реальному житті", group: "nets" },
+  { src: `${BASE}gallery/nets/81.jpg`, alt: "Сітки", tag: "Готовий виріб", group: "nets" },
   { src: `${BASE}gallery/chugaistryky/33.jpg`, alt: "Чугайстрики", tag: "Зимові чугайстрики", group: "chugaistryky" },
   { src: `${BASE}gallery/chugaistryky/34.jpg`, alt: "Чугайстрики", tag: "Чугайстрики на природі", group: "chugaistryky" },
   { src: `${BASE}gallery/chugaistryky/35.jpg`, alt: "Чугайстрики", tag: "Чугайстрики", group: "chugaistryky" },
@@ -120,6 +121,7 @@ export const GALLERY = [
   { src: `${BASE}gallery/chugaistryky/44.jpg`, alt: "Чугайстрики", tag: "Чугайстрики", group: "chugaistryky" },
   { src: `${BASE}gallery/chugaistryky/45.jpg`, alt: "Чугайстрики", tag: "Чугайстрики на військових", group: "chugaistryky" },
   { src: `${BASE}gallery/chugaistryky/46.jpg`, alt: "Чугайстрики", tag: "Чугайстрики взимку", group: "chugaistryky" },
+  { src: `${BASE}gallery/chugaistryky/80.jpg`, alt: "Чугайстрики", tag: "Чугайстрики в полі", group: "chugaistryky" },
   { src: `${BASE}gallery/other/28.jpg`, alt: "Команда", tag: "Команда", group: "other" },
   { src: `${BASE}gallery/other/29.jpg`, alt: "Звіт", tag: "Звіт", group: "other" },
   { src: `${BASE}gallery/other/30.jpg`, alt: "Відгук", tag: "Відгук", group: "other" },
@@ -156,6 +158,7 @@ export const GALLERY = [
   { src: `${BASE}gallery/awards/76.jpg`, alt: "Подяка", tag: "Подяка", group: "awards" },
   { src: `${BASE}gallery/awards/77.jpg`, alt: "Подяка", tag: "Подяка", group: "awards" },
   { src: `${BASE}gallery/awards/78.jpg`, alt: "Подяка", tag: "Подяка", group: "awards" },
+  { src: `${BASE}gallery/awards/79.jpg`, alt: "Подяка", tag: "Подяка", group: "awards" },
 ];
 
 export const DONATE = {
