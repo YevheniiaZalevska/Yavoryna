@@ -7,6 +7,7 @@ import Footer from "./sections/Footer";
 import OrderModal from "./components/OrderModal";
 import Awards from "./sections/Awards";
 import Stats from "./sections/Stats";
+import ScrollTopButton from "./components/ScrollTopButton";
 
 export default function App() {
   const base = import.meta.env.BASE_URL; 
@@ -32,8 +33,8 @@ export default function App() {
       <Header onNavigate={scrollTo} onOpenOrder={openOrder} />
 
       <main>
-        <Stats onOpenOrder={openOrder} onNavigate={scrollTo} />
-        <Hero/>
+        <Stats/>
+        <Hero onOpenOrder={openOrder} onNavigate={scrollTo}/>
         <Services onOpenOrder={openOrder} />
         <Gallery />
         < Awards />
@@ -44,6 +45,8 @@ export default function App() {
         open={orderOpen}
         onClose={() => setOrderOpen(false)}
       />
+
+      <ScrollTopButton />
     </div>
   );
 }
