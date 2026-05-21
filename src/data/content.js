@@ -94,6 +94,7 @@ export const GALLERY = [
   { src: `${BASE}gallery/other/10.jpg`, alt: "Готові вироби", tag: "Фідбек", group: "other" },
   { src: `${BASE}gallery/other/11.jpg`, alt: "Плетіння сітки", tag: "Готові вироби", group: "other" },
   { src: `${BASE}gallery/other/12.jpg`, alt: "Волонтери за роботою", tag: "Волонтери за роботою", group: "other" },
+  { src: `${BASE}gallery/other/81.jpg`, alt: "Ракета", tag: "Ракета", group: "other" },
   { src: `${BASE}gallery/warm/13.jpg`, alt: "Шапка", tag: "Шапка", group: "warm" },
   { src: `${BASE}gallery/warm/14.jpg`, alt: "Подушки", tag: "Подушки", group: "warm" },
   { src: `${BASE}gallery/warm/15.jpg`, alt: "Шкарпетки", tag: "Шкарпетки", group: "warm" },
@@ -159,6 +160,8 @@ export const GALLERY = [
   { src: `${BASE}gallery/awards/77.jpg`, alt: "Подяка", tag: "Подяка", group: "awards" },
   { src: `${BASE}gallery/awards/78.jpg`, alt: "Подяка", tag: "Подяка", group: "awards" },
   { src: `${BASE}gallery/awards/79.jpg`, alt: "Подяка", tag: "Подяка", group: "awards" },
+  { src: `${BASE}gallery/awards/79.jpg`, alt: "Подяка", tag: "Подяка", group: "awards" },
+  { src: `${BASE}gallery/awards/82.jpg`, alt: "Подяка", tag: "Подяка", group: "awards" },
 ];
 
 export const DONATE = {
@@ -176,13 +179,13 @@ export const CURRENT_NEEDS = [
 
 export const STATS = [
   {
-    value: 90295,
+    value: 91109,
     suffix: "+ м2",
     label: "маскувальних сіток",
     note: "За 12 років роботи",
   },
   {
-    value: 404,
+    value: 406,
     suffix: "+",
     label: "чугайстриків",
     note: "Для маскування та укриття за 4 роки",
