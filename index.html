@@ -35,6 +35,83 @@
     <meta property="og:locale" content="uk_UA" />
 
     <meta name="theme-color" content="#050607" />
+    <!-- Структуровані дані для пошукових систем (Organization / NGO + WebSite) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "NGO",
+            "@id": "https://yavorynakam.dp.ua/#organization",
+            "name": "Яворина",
+            "alternateName": "Всеукраїнське Об'єднання Українок «Яворина» — представництво у Дніпропетровській області",
+            "url": "https://yavorynakam.dp.ua/",
+            "description": "Волонтерська ініціатива з Дніпропетровської області. Плетемо маскувальні сітки, виготовляємо чугайстрики, шиємо та в'яжемо речі для військових і шпиталів, публікуємо фото-звіти.",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://yavorynakam.dp.ua/brand/logo.png",
+              "width": 596,
+              "height": 655
+            },
+            "image": "https://yavorynakam.dp.ua/brand/logo.png",
+            "foundingDate": "2014",
+            "knowsLanguage": "uk",
+            "address": {
+              "@type": "PostalAddress",
+              "addressRegion": "Дніпропетровська область",
+              "addressCountry": "UA"
+            },
+            "areaServed": {
+              "@type": "AdministrativeArea",
+              "name": "Дніпропетровська область, Україна"
+            },
+            "sameAs": [
+              "https://www.instagram.com/olenazal",
+              "https://t.me/OlZalevska",
+              "https://www.facebook.com/share/g/1RNGE1GYj9/"
+            ],
+            "contactPoint": [
+              {
+                "@type": "ContactPoint",
+                "contactType": "volunteering",
+                "name": "Зв'язок у Telegram",
+                "url": "https://t.me/OlZalevska",
+                "availableLanguage": ["uk"]
+              },
+              {
+                "@type": "ContactPoint",
+                "contactType": "volunteering",
+                "name": "Зв'язок в Instagram",
+                "url": "https://www.instagram.com/olenazal",
+                "availableLanguage": ["uk"]
+              }
+            ],
+            "potentialAction": {
+              "@type": "DonateAction",
+              "name": "Пожертвувати на матеріали та відправки",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://send.monobank.ua/jar/1iuuLBi5L",
+                "actionPlatform": [
+                  "https://schema.org/DesktopWebPlatform",
+                  "https://schema.org/MobileWebPlatform"
+                ]
+              },
+              "recipient": { "@id": "https://yavorynakam.dp.ua/#organization" }
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://yavorynakam.dp.ua/#website",
+            "url": "https://yavorynakam.dp.ua/",
+            "name": "Яворина — волонтерська ініціатива",
+            "inLanguage": "uk-UA",
+            "publisher": { "@id": "https://yavorynakam.dp.ua/#organization" }
+          }
+        ]
+      }
+    </script>
+
   </head>
 
   <body>

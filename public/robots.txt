@@ -1,0 +1,5 @@
+# https://yavorynakam.dp.ua
+User-agent: *
+Allow: /
+
+Sitemap: https://yavorynakam.dp.ua/sitemap.xml
