@@ -115,7 +115,60 @@
   </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!--
+        Статичний вміст для пошукових роботів і для перших мілісекунд завантаження.
+        React (createRoot) повністю замінює його під час монтування застосунку,
+        тож у готовій сторінці цього блоку немає.
+      -->
+      <div
+        style="
+          max-width: 720px;
+          margin: 0 auto;
+          padding: 48px 20px;
+          color: #e8e8ea;
+          font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+          line-height: 1.6;
+        "
+      >
+        <h1>Яворина — волонтерська ініціатива</h1>
+        <p>
+          Представництво у Дніпропетровській області ГО «Всеукраїнське
+          Об'єднання Українок “Яворина”». Осередок працює постійно протягом
+          12 років.
+        </p>
+        <p>
+          Плетемо маскувальні сітки, виготовляємо чугайстрики — індивідуальні
+          маскувальні костюми, шиємо та в'яжемо білизну, килимки, шкарпетки,
+          шапки й бафи для військових і шпиталів, публікуємо фото-звіти про
+          кожну передачу.
+        </p>
+        <p>
+          Зв'язатися:
+          <a href="https://t.me/OlZalevska" style="color: #e8e8ea"
+            >Telegram</a
+          >
+          ·
+          <a href="https://www.instagram.com/olenazal" style="color: #e8e8ea"
+            >Instagram</a
+          >
+          ·
+          <a
+            href="https://www.facebook.com/share/g/1RNGE1GYj9/"
+            style="color: #e8e8ea"
+            >Facebook</a
+          >
+        </p>
+        <p>
+          Підтримати матеріалами та відправками:
+          <a
+            href="https://send.monobank.ua/jar/1iuuLBi5L"
+            style="color: #e8e8ea"
+            >банка monobank</a
+          >
+        </p>
+      </div>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
