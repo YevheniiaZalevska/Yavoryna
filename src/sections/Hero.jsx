@@ -79,7 +79,7 @@ export default function Hero({ onOpenOrder, onNavigate }) {
                   <img src={p.src} alt={p.alt} loading="lazy" />
                 </picture>
                   <div className="heroMosaicFade" />
-                  <div className="heroMosaicTag">{p.tag}</div>
+                  <div className="heroMosaicTag" aria-hidden="true">{p.tag}</div>
               </div>
             ))}
           </div>

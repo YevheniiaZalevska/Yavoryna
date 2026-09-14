@@ -23,7 +23,7 @@ export default function GalleryGrid({ items, onOpen }) {
           </div>
           <div className="galleryFade" />
           <div className="galleryMeta">
-            <span className="tag">{it.tag}</span>
+            <span className="tag" aria-hidden="true">{it.tag}</span>
             {/* <Camera size={16} /> */}
           </div>
         </motion.button>
