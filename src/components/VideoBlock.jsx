@@ -12,7 +12,7 @@ export default function VideoBlock() {
           className="videoPlayer"
           controls
           playsInline
-          preload="metadata"
+          preload="none"
           poster="/gallery/video-cover.jpg"
         >
           <source src="/gallery/video.mp4" type="video/mp4" />
@@ -26,7 +26,7 @@ export default function VideoBlock() {
           className="videoPlayer"
           controls
           playsInline
-          preload="metadata"
+          preload="none"
           poster="/gallery/video2-cover.jpg"
         >
           <source src="/gallery/video2.mp4" type="video/mp4" />

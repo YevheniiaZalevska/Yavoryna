@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import thumbSrc from "../utils/thumbSrc";
 
 function getPerPage() {
   if (window.matchMedia("(max-width: 560px)").matches) return 1;
@@ -163,6 +164,7 @@ export default function Carousel3Up({
     >
       <button
         className="c3Arrow left"
+        aria-label="Попереднє фото"
         onClick={() => {
           pauseNow();
           prev();
@@ -190,7 +192,10 @@ export default function Carousel3Up({
             title={it.alt}
           >
             <div className="c3ImgWrap">
-              <img src={it.src} alt={it.alt} loading="lazy" />
+              <picture>
+                <source srcSet={thumbSrc(it.src)} type="image/webp" />
+                <img src={it.src} alt={it.alt} loading="lazy" />
+              </picture>
               <div className="c3Fade" />
               <div className="c3Meta">
                 <span className="c3Tag">{it.tag}</span>
@@ -202,6 +207,7 @@ export default function Carousel3Up({
 
       <button
         className="c3Arrow right"
+        aria-label="Наступне фото"
         onClick={() => {
           pauseNow();
           next();

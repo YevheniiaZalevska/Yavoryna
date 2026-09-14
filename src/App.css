@@ -73,6 +73,12 @@ a {
     text-decoration: none
 }
 
+/* <picture> лише вибирає формат і не має створювати власний блок —
+   інакше правила на кшталт .galleryItem img { height: 100% } втрачають опору */
+picture {
+    display: contents;
+}
+
 button {
     font-family: inherit
 }
