@@ -75,7 +75,7 @@ export default function Hero({ onOpenOrder, onNavigate }) {
             {firstPhotos.map((p) => (
               <div key={p.src} className="heroMosaicItem">
                 <picture>
-                  <source srcSet={thumbSrc(p.src)} type="image/webp" />
+                  <source srcSet={thumbSrc(p.src, 320)} type="image/webp" />
                   <img src={p.src} alt={p.alt} loading="lazy" />
                 </picture>
                   <div className="heroMosaicFade" />

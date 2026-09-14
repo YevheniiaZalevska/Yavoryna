@@ -17,7 +17,7 @@ export default function GalleryGrid({ items, onOpen }) {
         >
           <div className="galleryImgWrap">
             <picture>
-              <source srcSet={thumbSrc(it.src)} type="image/webp" />
+              <source srcSet={thumbSrc(it.src, 320)} type="image/webp" />
               <img src={it.src} alt={it.alt} loading="lazy" />
             </picture>
           </div>

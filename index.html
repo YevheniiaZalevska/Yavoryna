@@ -42,12 +42,12 @@
 
     <meta name="theme-color" content="#050607" />
 
-    <!-- Google Analytics (GA4) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-FK539NFXDJ"
-    ></script>
-
+    <!-- Google Analytics (GA4).
+         Сам скрипт підвантажуємо вже після завантаження сторінки: на
+         повільному мобільному інтернеті він інакше змагається за канал
+         з основним бандлом і затримує появу вмісту. Команди gtag до того
+         моменту накопичуються в dataLayer і відправляються потім, тож
+         жодного візиту не втрачено. -->
     <script>
       window.dataLayer = window.dataLayer || [];
 
@@ -58,6 +58,13 @@
       gtag("js", new Date());
 
       gtag("config", "G-FK539NFXDJ");
+
+      addEventListener("load", function () {
+        var s = document.createElement("script");
+        s.async = true;
+        s.src = "https://www.googletagmanager.com/gtag/js?id=G-FK539NFXDJ";
+        document.head.appendChild(s);
+      });
     </script>
 
     <!-- Структуровані дані для пошукових систем (Organization / NGO + WebSite) -->
