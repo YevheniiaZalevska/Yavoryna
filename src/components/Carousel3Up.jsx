@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import thumbSrc from "../utils/thumbSrc";
+import Thumb from "./Thumb";
 
 function getPerPage() {
   if (window.matchMedia("(max-width: 560px)").matches) return 1;
@@ -193,10 +193,7 @@ export default function Carousel3Up({
             title={it.alt}
           >
             <div className="c3ImgWrap">
-              <picture>
-                <source srcSet={thumbSrc(it.src)} type="image/webp" />
-                <img src={it.src} alt={it.alt} loading="lazy" />
-              </picture>
+              <Thumb src={it.src} alt={it.alt} />
               <div className="c3Fade" />
               <div className="c3Meta">
                 <span className="c3Tag" aria-hidden="true">{it.tag}</span>

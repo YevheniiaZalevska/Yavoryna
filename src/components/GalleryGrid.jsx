@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Camera } from "lucide-react";
-import thumbSrc from "../utils/thumbSrc";
+import Thumb from "./Thumb";
 
 export default function GalleryGrid({ items, onOpen }) {
   return (
@@ -16,10 +16,7 @@ export default function GalleryGrid({ items, onOpen }) {
           transition={{ duration: 0.45 }}
         >
           <div className="galleryImgWrap">
-            <picture>
-              <source srcSet={thumbSrc(it.src, 320)} type="image/webp" />
-              <img src={it.src} alt={it.alt} loading="lazy" />
-            </picture>
+            <Thumb src={it.src} alt={it.alt} width={320} />
           </div>
           <div className="galleryFade" />
           <div className="galleryMeta">

@@ -8,7 +8,7 @@ import { REGION_LABEL } from "../data/content";
 import { GALLERY } from "../data/content";
 import { DONATE } from "../data/content";
 import VideoBlock from "../components/VideoBlock";
-import thumbSrc from "../utils/thumbSrc";
+import Thumb from "../components/Thumb";
 
 export default function Hero({ onOpenOrder, onNavigate }) {
   const statsRef = useRef(null);
@@ -74,10 +74,7 @@ export default function Hero({ onOpenOrder, onNavigate }) {
           <div className="heroMosaic">
             {firstPhotos.map((p) => (
               <div key={p.src} className="heroMosaicItem">
-                <picture>
-                  <source srcSet={thumbSrc(p.src, 320)} type="image/webp" />
-                  <img src={p.src} alt={p.alt} loading="lazy" />
-                </picture>
+                <Thumb src={p.src} alt={p.alt} width={320} />
                   <div className="heroMosaicFade" />
                   <div className="heroMosaicTag" aria-hidden="true">{p.tag}</div>
               </div>

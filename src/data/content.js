@@ -152,7 +152,7 @@ export const GALLERY = [
   { src: `${BASE}gallery/other/62.jpg`, alt: "Волонтери в роботі", tag: "Волонтери в роботі", group: "other" },
   { src: `${BASE}gallery/other/63.jpg`, alt: "Робоче місце", tag: "Робоче місце", group: "other" },
   { src: `${BASE}gallery/other/64.jpg`, alt: "Відгук", tag: "Відгук", group: "other" },
-  { src: `${BASE}gallery/other/81.jpg`, alt: "Волонтери Камянського", tag: "Волонтери Камянського", group: "awards" },
+  { src: `${BASE}gallery/other/82.jpg`, alt: "Волонтери Камянського", tag: "Волонтери Камянського", group: "awards" },
   { src: `${BASE}gallery/other/83.jpg`, alt: "Маскувальна сітка", tag: "Маскувальна сітка", group: "other" },
   { src: `${BASE}gallery/awards/66.jpg`, alt: "Подяка", tag: "Подяка", group: "awards" },
   { src: `${BASE}gallery/awards/67.jpg`, alt: "Подяка", tag: "Подяка", group: "awards" },
