@@ -101,7 +101,7 @@ export default function Stats() {
           ))}
 
           <p className="p">
-            * Станом на 5 травня 2026 року
+            * Станом на 5 вересня 2026 року
           </p>
         </div>
       </div>
