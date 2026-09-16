@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import thumbSrc from "../utils/thumbSrc";
 
 function getPerPage() {
   if (window.matchMedia("(max-width: 560px)").matches) return 1;
@@ -21,6 +22,7 @@ export default function Carousel3Up({
 
   const maxIndex = Math.max(0, items.length - perPage);
   const positions = maxIndex + 1;
+  const dotsInteractive = positions <= 10;
 
   const clampIndex = (i) => Math.max(0, Math.min(maxIndex, i));
 
@@ -163,6 +165,7 @@ export default function Carousel3Up({
     >
       <button
         className="c3Arrow left"
+        aria-label="Попереднє фото"
         onClick={() => {
           pauseNow();
           prev();
@@ -190,10 +193,13 @@ export default function Carousel3Up({
             title={it.alt}
           >
             <div className="c3ImgWrap">
-              <img src={it.src} alt={it.alt} loading="lazy" />
+              <picture>
+                <source srcSet={thumbSrc(it.src)} type="image/webp" />
+                <img src={it.src} alt={it.alt} loading="lazy" />
+              </picture>
               <div className="c3Fade" />
               <div className="c3Meta">
-                <span className="c3Tag">{it.tag}</span>
+                <span className="c3Tag" aria-hidden="true">{it.tag}</span>
               </div>
             </div>
           </button>
@@ -202,6 +208,7 @@ export default function Carousel3Up({
 
       <button
         className="c3Arrow right"
+        aria-label="Наступне фото"
         onClick={() => {
           pauseNow();
           next();
@@ -217,19 +224,33 @@ export default function Carousel3Up({
           {index + 1} / {positions}
         </div>
 
-        <div className="c3Dots">
-          {Array.from({ length: positions }).map((_, i) => (
-            <button
-              key={i}
-              className={`c3Dot ${i === index ? "isActive" : ""}`}
-              onClick={() => {
-                pauseNow();
-                go(i);
-                resumeLater();
-              }}
-              aria-label={`position ${i + 1}`}
-            />
-          ))}
+        {/* Крапки клікабельні лише поки їх небагато: кнопка мусить мати
+            область дотику 24x24 (WCAG 2.2), а три десятки таких кнопок
+            розповзлися б на кілька рядків. Там, де позицій більше,
+            крапки лишаються показником — гортати можна стрілками,
+            свайпом і лічильником поруч. */}
+        <div className="c3Dots" aria-hidden={dotsInteractive ? undefined : true}>
+          {Array.from({ length: positions }).map((_, i) =>
+            dotsInteractive ? (
+              <button
+                key={i}
+                className={`c3Dot ${i === index ? "isActive" : ""}`}
+                onClick={() => {
+                  pauseNow();
+                  go(i);
+                  resumeLater();
+                }}
+                aria-label={`Перейти до фото ${i + 1}`}
+              >
+                <span className="c3DotMark" />
+              </button>
+            ) : (
+              <span
+                key={i}
+                className={`c3DotStatic ${i === index ? "isActive" : ""}`}
+              />
+            )
+          )}
         </div>
       </div>
 
